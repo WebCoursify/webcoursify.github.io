@@ -1,5 +1,12 @@
-WebDevelopmentCourse
-====================
+---
+layout: page
+permalink: /about/
+title: ReadMeFirst-Details of this course
+tagline: 
+tags: 
+modified: 12-23-2014
+comments: true
+---
 
 This is a mini-course that teach about web development. This is for who have programming experiences (at least wrote some programs -- no matter what languages), and want to quickly learn the ability to develop web systems (including but not limited to websites we see everyday). 
 
@@ -50,8 +57,5 @@ Basically, before starting this course, students should:
 Finally, to prove that we're serious, you'll get a score for your performance in this course. Of course, we trust you to be honest so we'll ask you to evaluate yourself. The way to do it is we'll provide test programs for each programming assignment and project. When the test case passes, you've earned that score!
 
 When you're done, we hope you can report your score to us. 
-
-
-
 
 
