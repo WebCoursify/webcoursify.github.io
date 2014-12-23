@@ -1,0 +1,22 @@
+
+
+- url: /preface
+  name: Preface
+
+- url: /django-basic
+  name: DjangoBasic
+
+- url: /mvc-controller
+  name: MVC-Controller
+
+- url: /mvc-model
+  name: MVC-Model
+
+- url: /
+  name: MVC-View(Undone)
+
+- url: /
+  name: AllOtherStuff(Undone)
+
+- url: /
+  name: TheCapstone!(Undone)
