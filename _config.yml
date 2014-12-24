@@ -1,16 +1,16 @@
 name: WebDevCourse
 author: firstprayer
-baseurl: /
+#baseurl: /
 description: Practical and Pragmatic course for web development
 github: http://www.github.com/arnp
 twitter: http://www.twitter.com/
 facebook: http://www.facebook.com
 linkedin: http://www.linkedin.com
-email: rnpatel[at]me.com
-location: 42°2'16"N   70°12'47"W
+#email: rnpatel[at]me.com
+#location: 42°2'16"N   70°12'47"W
 disqus: diqus-username
 emailsubscription: http://eepurl.com/_YOyb
-
+url: http://webcoursify.github.io
 ##Make sure to edit the above fields, especially for disqus.
 
 
@@ -34,3 +34,7 @@ defaults:
 
 gems:
   - jekyll-sitemap
+
+sitemap:
+  include_posts:
+    - "index.html"
