@@ -16,7 +16,7 @@ When I was a sophomore, I started doing web development, and I basically taught 
 
 Probably none. There're two reasons:
 
-1.  These tutorials may tell you, some tool has functionalities A, B, C... but they don't show you how to actually use the tool to solve a real problem. It's like describing the shape, color, materials, components of a hammber, but never tell you how to knock a nail with it. So you'll never learn a tool by simply watching tutorials. You'll need to practise
+1.  These tutorials may tell you, some tool has functionalities A, B, C... but they don't show you how to actually use the tool to solve a real problem. It's like describing the shape, color, materials, components of a hammer, but never tell you how to knock a nail with it. So you'll never learn a tool by simply watching tutorials. You'll need to practise
 
 2.  Let's stick to that hammer example. Suppose you know how to use hammer, how to use saw to cut wood, you know how to use pencil to draw and how to use measuring tape to measure stuffs; but, will you be able to desgin and build a wood desk totally by yourself then? Apparently no. To build a desk you need to combine these skills, and how they might affect each other. What's more, you'll probably find yourself more skillful with these tools once you're able to combine them together
 
