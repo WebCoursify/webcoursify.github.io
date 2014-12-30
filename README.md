@@ -13,12 +13,14 @@ Here're what you'll get when you finish this course:
 4.  Of course, the project itself. You can show off to your friends, or further improve it to publish it online! 
 5.  If you're looking for a job related to web development (internship or full-time job), I hope this will be something that can make your resume better.
 
-### Prerequisites
+### Requirements
 
-Basically, before starting this course, students should:  
+We would need you to have some coding experiences. Besides, knowledge of the following topics will be of much help:
 
-1.  Know the basic syntax of Python, Javascript  
-2.  Know what HTML/CSS look like, and have the basic ability to understand them (for example, one should know "<a\>" represents a hyperlink). If not, come back when you at least understand the followings:
+1.  Basic syntax of Python, Javascript. The project uses Python as the language for the server side. Javascript is used for front-end development
+
+2.  What HTML/CSS look like, and have the basic ability to understand them (for example, one should know "<a\>" represents a hyperlink). Use the following questiosn to test your knowledge on these:
+
     1.  The meaning and usage of the following html tags:
 
             <form action="/submit" method="GET"> </form>
@@ -39,17 +41,18 @@ Basically, before starting this course, students should:
             .item-container .item {padding: 10px; width: 33%;}
             .gallery.container {width: 90%; margin-left: 5%;}
 
-3.  Have basic understanding of database(here I mean relational database like MySQL)
+3.  Basic understanding of database(here I mean relational database like MySQL)
 
 ### How the course work:  
 
 *   At the very beginning, you will be provided a simple sample code, which is a Django demo project. During the learning of each chapter there will be assignments, for which students will be required to implement some new and small functionalities inside the demo project
+
 *   At the end, there'll be a relatively "big" assignment, which may count as a small individual project. Students will be required to implement a sub-system based on the code they have
+
 *   Some chapters will have quiz questions after sections or at the end. We're trying to work on that
 
-Finally, to prove that we're serious, you'll get a score for your performance in this course. Of course, we trust you to be honest so we'll ask you to evaluate yourself. The way to do it is we'll provide test programs for each programming assignment and project. When the test case passes, you've earned that score!
 
-When you're done, we hope you can report your score to us. 
+This course is under active development. If you'll willing to contribute you can visit the [github repo](https://github.com/WebCoursify/webcoursify.github.io). If you have any feedback, you're very welcome to [email us](mailto: {{site.email}})
 
 
 

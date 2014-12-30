@@ -8,7 +8,7 @@ modified: 12-23-2014
 comments: true
 ---
 
-### Brief introduction of http request and http response
+### 1. Brief introduction of http request and http response
 
 As we mentioned before, the basic model of how a web system works is:
 
@@ -47,7 +47,7 @@ More details about these methods can also be found [here](http://en.wikipedia.or
 
 *   Data payload. The data payload can be text, html, binary data, etc. 
 
-### Django's HttpRequest, HttpResponse, and Url dispatching
+### 2. Django's HttpRequest, HttpResponse, and Url dispatching
 
 Django, and basically all other web frameworks, encapsulate the implementation details of http, so when implementing controllers, developer only need to read data from requests and write data to responses with provided interface. 
 
@@ -114,13 +114,13 @@ This pattern will match all urls in the form of <code>api/article/{a number here
 
 
 
-### Assignment: Implementing Controller
+### 3. Assignment: Implementing Controller
 
 In this assignment, we'll ask you to implement several controllers according to our specifications. 
 
 **Note**: Before you start, you should know that from now on, since these are assignments, we won't directly tell you exactly what to do step by step, but we'll give me some general guidances, and we expect (as well as encourage) you to figure out the rest by yourself(search on google, look at the official document of Django, etc). 
 
-1.  Let's start with something simple: heart beat response. The controller you need to implement is already defined in <code>app.controllers.practise.heart_beat</code>. Specifications are written in the doc string. When finished, use <code>make 2_controller_heart_beat</code> to under the test directory to test *(Score: 10)*
+1.  Let's start with something simple: heart beat response. The controller you need to implement is already defined in <code>app.controllers.practise.heart_beat</code>. Specifications are written in the doc string. When finished, use <code>make 2_controller_heart_beat</code> to under the test directory to test 
 2.  Now we come to the second question. You need to implement:
 
     1.   <code>app.controllers.practise.create_file</code>, which processes requests with relative urls exactly the same as '/practise/file/create'
@@ -132,8 +132,6 @@ In this assignment, we'll ask you to implement several controllers according to 
     *   You may use <code>uuid</code> to generate a unique alphanumeric id
 
     When finished, use <code>make 2_controller_files</code> to test
-
-    *(Score: 20)*
 
 3.  You may also use <code>make 2_controller</code> to test all assignments in this chapter
 

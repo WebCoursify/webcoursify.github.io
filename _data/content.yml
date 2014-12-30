@@ -12,8 +12,8 @@
 - url: /mvc-model
   name: MVC-Model
 
-- url: /
-  name: MVC-View(Undone)
+- url: /mvc-view
+  name: MVC-View(New)
 
 - url: /
   name: AllOtherStuff(Undone)

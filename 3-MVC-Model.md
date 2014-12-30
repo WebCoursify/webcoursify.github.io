@@ -45,7 +45,7 @@ Each class corresponds to a table in the database. <code>username</code>, <code>
 
 That's basically how to define the models, now let's see how to use them. 
 
-#### Model usage
+#### 1.1 Model usage
 
 There're basically 4 different types of operations:
 
@@ -93,7 +93,7 @@ There're basically 4 different types of operations:
         user = User.objects.get(username='...')
         user.delete()
 
-#### More complex things: Relations
+#### 1.2 More complex things: Relations
 
 Between *entities* there're three different relations:
 
@@ -113,7 +113,7 @@ In Django, there're built-in fields to represent these relations([reference](htt
 2.  *One-to-Many*: Use <code>ForeignKey</code>
 3.  *Many-to-Many*: Use <code>ManyToManyField</code>
 
-#### What else can be done besides defining tables?
+#### 1.3 What else can be done besides defining tables?
 
 Previously in the design phase of Model layer, we only see how to define tables. This is actually sufficient under many simple cases, since Django has provided us with nice and neat, easy-to-use interfaces to manipulate the data. On the other hand, when things get a little more complicated, we might want to turn some frequently used operations into a method provided by this layer. Here we'll show some examples, and with the same method we can also encapsulate complicated logic inside the Model layer to make the architecture neater. 
 
@@ -173,13 +173,13 @@ You already know how to make the first line works. Making the second line works 
 
 We present several discussions here.
 
-#### Index
+#### 2.1 Index
 
 Index is some kind of additional data structure used for faster data retrieval. The most widely used index type is BTree, or some variants of it. To say it in a simple way, BTree puts nodes with smaller value on the left and nodes with larger value on the right, so it puts all rows in order with respect to specific field(s). For example, an index with respect to the <code>id</code> field will put all rows in the ascending order of id, while an index with respect the <code>age</code> will put all rows in the ascending order or age, which is different from the order with respect to id. 
 
 All primary keys and foreign keys are accompanied with index. We can define our own index on one or more than one fields. The advantage here is we can search faster. If we want users with age=18 we can do this by searching a very small part of the index we have on the age field. If we do not, we'll need to scan the whole table. However, the disadvantage is we need to pay the maintainence cost for this structure when we need to insert/update rows. 
 
-#### You see that <code>deleted</code> field?
+#### 2.2 You see that <code>deleted</code> field?
 
 When I first see such a field I was confused, as you might be now. What's it for? Sounds like a field used to mark whether a row is deleted or not. If so, why do we need this field? Why not just delete the row, but border to keep the row and mark it as deleted? 
 
@@ -209,7 +209,7 @@ For this chapter, you'll need to implement new functionalities for the platform 
     
     *   Use case-insensitive match
     *   When the query parameter is invalid, you should return 400
-    *   Use <code>make 3_model_search</code> to test *(Score: 20)*
+    *   Use <code>make 3_model_search</code> to test 
 
 
 2.  *Everything about Article*. Implement three controllers for:
@@ -228,7 +228,7 @@ For this chapter, you'll need to implement new functionalities for the platform 
     *   If the user is not log on, return 401. If the log on user is not the author, return 403
     *   If the article is not found. Return 404.
 
-    Use <code>3_model_article</code> for testing. *(Score: 25)*
+    Use <code>3_model_article</code> for testing. 
 
     BY THE WAY, have you thought about using the same controller for the first two? 
 
@@ -253,7 +253,7 @@ For this chapter, you'll need to implement new functionalities for the platform 
     *   To get this done, you'll need to modify the table schemas (the definition of classes in <code>models.py</code>), either update the existed class(es) or add new class(es). Recall how to represent such a *User-follow-User* relationship in database. And check for Django documentation about how to manipulate such a relation.
     *   The order of returned users doesn't matter
 
-    Use <code>3_model_follow</code> for testing. *(Score: 25)*
+    Use <code>3_model_follow</code> for testing.
 
 **Some additional hints** 
 
