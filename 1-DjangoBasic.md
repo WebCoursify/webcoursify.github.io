@@ -17,7 +17,7 @@ Allow me to use an old-fashion image here:
 
 Basically all web systems follow this model. The web system, as a server, responds to all requests sent by different clients(browers, crawler, etc), using standard protocols. Clients' requests are considered independent of each other. This means when the server is constructing the response to a request sent from one client, it doesn't need to consider the requests from other clients or other requests from the same client, but only the information contained in this request, and probably the information stored in the database or file system on the server side.
 
-### Model-View-Controller Architecture Pattern
+### 2. Model-View-Controller Architecture Pattern
 
 This model is widely used in developing softwares that have a GUI, not just in web system. It can be applied to a system as well as a component inside a system. In a word it's a very useful pattern.
 
@@ -27,11 +27,11 @@ A short introduction here is:
 2.  **View**: This component focuses on display information to users(for example, display a list or display a visualization chart) and receive users' interaction (such as button click or keyboard input)
 3.  **Controller**: This is the glue between Model and View. The functions in this component are usually triggered by an event (the user clicks a button, the state of the Model has changed, etc), and take the corresponding actions (search items in database and return the result to View, or send a message to View to notify user that some states of the Model have changed, etc)
 
-### 2. In Practise: Django's MVC
+### 3. In Practise: Django's MVC
 
 You're expected to run the demo project successful before we actually start to go through Django framework.
 
-#### 2.1 Configuration of Demo Project
+#### 3.1 Configuration of Demo Project
 
 1.  First, ensure your machine have installed **Python** and **Pip**. You can check by simply typing "python" and "pip" in the command line. If not, go to the [Python.org](https://www.python.org/) and [Pip Installation](https://pip.pypa.io/en/latest/installing.html)
 2.  Install a MySQL server on your machine (You may use "apt-get" for Ubuntu, homebrew for Mac. Go to google and you'll find everything). Note down your username and password. Also install [MySQL-python](https://pypi.python.org/pypi/MySQL-python/). You can just type "pip install MySQL-python"
@@ -88,7 +88,7 @@ You're expected to run the demo project successful before we actually start to g
 
     This means our blog system is officially up and ready for the next step! 
 
-#### 2.2 Some Notes
+#### 3.2 Some Notes
 
 The demo project is a some kind of blogging platform. For a simplified design it should have the following features:
 
@@ -99,7 +99,7 @@ The demo project is a some kind of blogging platform. For a simplified design it
 
 The demo project is a good start. We expect you to finish it by implementing features above. We'll divide these work into assignments for each chapter and the final project. 
 
-#### 2.3 Show Me the Code
+#### 3.3 Show Me the Code
 
 After you extract the demo project, you can see the basic structure of it. It should be more or less like this:
 
@@ -154,7 +154,7 @@ There're several key components here:
         python manage.py syncdb    # Synchronize database, create tables for all models in all applications
 
 
-### 3. Assignment: Automatic tests
+### 4. Assignment: Automatic tests
 
 In previous configuration we have get the system running. In this assignment you're asked to run automatic tests against the running server. By doing so you'll be familiar with the process, which is essential for the rest of the course because many assignments later will be graded on the result on running auto-testing scripts. 
 
