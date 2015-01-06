@@ -4,7 +4,7 @@ permalink: /mvc-controller/
 title: MVC-Controller
 tagline: 
 tags: 
-modified: 12-23-2014
+modified: 01-06-2015
 comments: true
 ---
 
@@ -118,7 +118,11 @@ This pattern will match all urls in the form of <code>api/article/{a number here
 
 In this assignment, we'll ask you to implement several controllers according to our specifications. 
 
-**Note**: Before you start, you should know that from now on, since these are assignments, we won't directly tell you exactly what to do step by step, but we'll give me some general guidances, and we expect (as well as encourage) you to figure out the rest by yourself(search on google, look at the official document of Django, etc). 
+**Note**: 
+
+Before you start, you should know that from now on, since these are assignments, we won't directly tell you exactly what to do step by step, but we'll give me some general guidances, and we expect (as well as encourage) you to figure out the rest by yourself(search on google, look at the official document of Django, etc). 
+
+When you implement a controller that accepts POST requests, you may need to add the <code>csrf_exempt</code> decorator to that controller (if you're using multiple decorators, make sure this is the last one being applied). By default, for POST request, Django would first check if the request contains a valid csrf token; if not will return 403. For making the problem simple, we use this decorator to work around that check. (More information on [Cross Site Request Forgery](https://docs.djangoproject.com/en/1.7/ref/contrib/csrf/))
 
 1.  Let's start with something simple: heart beat response. The controller you need to implement is already defined in <code>app.controllers.practise.heart_beat</code>. Specifications are written in the doc string. When finished, use <code>make 2_controller_heart_beat</code> to under the test directory to test 
 2.  Now we come to the second question. You need to implement:

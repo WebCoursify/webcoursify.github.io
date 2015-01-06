@@ -13,10 +13,10 @@
   name: MVC-Model
 
 - url: /mvc-view
-  name: MVC-View(New)
+  name: MVC-View
 
-- url: /
-  name: AllOtherStuff(Undone)
+- url: /topic-user
+  name: Topic-User(New)
 
 - url: /
   name: TheCapstone!(Undone)

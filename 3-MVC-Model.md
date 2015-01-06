@@ -20,7 +20,7 @@ Most web systems use database as backend support for Model. We're using MySQL fo
 
 Here we'll learn how to **define** and **use** Model in Django. 
 
-#### Model definition
+#### 1.1 Model definition
 
 Let's see the following example:
 
@@ -45,7 +45,7 @@ Each class corresponds to a table in the database. <code>username</code>, <code>
 
 That's basically how to define the models, now let's see how to use them. 
 
-#### 1.1 Model usage
+#### 1.2 Model usage
 
 There're basically 4 different types of operations:
 
@@ -93,7 +93,7 @@ There're basically 4 different types of operations:
         user = User.objects.get(username='...')
         user.delete()
 
-#### 1.2 More complex things: Relations
+#### 1.3 More complex things: Relations
 
 Between *entities* there're three different relations:
 
@@ -113,7 +113,7 @@ In Django, there're built-in fields to represent these relations([reference](htt
 2.  *One-to-Many*: Use <code>ForeignKey</code>
 3.  *Many-to-Many*: Use <code>ManyToManyField</code>
 
-#### 1.3 What else can be done besides defining tables?
+#### 1.4 What else can be done besides defining tables?
 
 Previously in the design phase of Model layer, we only see how to define tables. This is actually sufficient under many simple cases, since Django has provided us with nice and neat, easy-to-use interfaces to manipulate the data. On the other hand, when things get a little more complicated, we might want to turn some frequently used operations into a method provided by this layer. Here we'll show some examples, and with the same method we can also encapsulate complicated logic inside the Model layer to make the architecture neater. 
 
