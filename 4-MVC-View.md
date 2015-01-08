@@ -257,6 +257,8 @@ There're many types of *input* for forms, such as text input, checkbox, radio ch
 
 contains two fields, username and password. The name should be unique, except for the case of radio checkbox. All radio checkboxes with the same "name" will be consider as a group, and users are only allowed to check one box in this group. 
 
+>   Note: If you want to submit a file through the form, remember to set the <code>enctype="multipart/form-data"</code> attribute of the form element
+
 The value currently stored in an input is in the "value" attribute. 
 
 In the example above there's an input with <code>type="submit"</code>. This is the submit button, a click on which will trigger the submission of the form. In the form element, <code>method</code> and <code>action</code> represent the http request method and the url the request goes to relatively. 

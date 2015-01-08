@@ -72,8 +72,26 @@ Session can be implemented through Cookie. The server return a session token in 
 	request.session['user'] = {'id': user.id, 'username': user.username}
 	...
 
+### 4. Email verification
 
-### 4. Assignments
+Most websites need to verify the user's email. To do that, the website would send a link to the email used by the user during registration. Clicking that link will verify the mail. If the email is invalid or doesn't belong to the person, he/she won't be able to see and click that link. 
+
+One way to implement this, is to take some data that uniquely represent the user(concatenate the user id and the email, for example), apply a two-way encryption algorithm on it with a private key only you have access to, and as the result get a token. Then, put that token in the url, like this:
+
+	http://YOUR_WEBSITE/verification?token=asdy7y2ehnjfajsdhuybje1
+
+Send that url to the user. When the user visits the url, you can retrieve the token from the request, recover the user identifier from the token with your private key, and finish the verification of that user's email.
+
+Django provides interface to send emails conveniently:
+
+	from django.core.mail import send_mail
+
+	send_mail('Subject here', 'Here is the message.', 'from@example.com',
+	    ['to@example.com'], fail_silently=False)
+
+More details [here](https://docs.djangoproject.com/en/1.7/topics/email/)
+
+### 5. Assignments
 
 *Registration*: Implement the registration controller and web page. Specifically, you need to:
 
