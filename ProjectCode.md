@@ -15,4 +15,5 @@ You'll need to start from this demo project and follow the instructions on cours
 **Update logs**:
 
 01-06-2015: Finish the test cases of 5-Topic-User. Among with some other small changes. 
+
 12-29-2014: Finish the test cases of *View*. Also change the website theme. 
