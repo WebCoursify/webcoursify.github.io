@@ -1,6 +1,6 @@
 ---
 layout: page
-permalink: /capstone/
+permalink: /project-spec/
 title: Capstone Project Specification
 tagline: 
 tags: 
@@ -55,7 +55,30 @@ Users are allowed to manage their profile. This means they can modify their user
 		*   Only log on users have access
 		*   When the article doesn't exist or is not published to the public, return 404
 
-	*   Implement the front end. You'll need to add a button in the article page. When user 
+	*   Implement the front end. You'll need to add a button in the article page. The user can click to LIKE or cancel the LIKE by clicking the button
+
+4.  Implement *Add comment* function. User can add comments to an article
+
+	*   Implement controller for <code>/api/article/{article_id}/comment/add</code>:
+
+		*   Only accept POST. Only log on users have access
+		*   Parameters:
+			*   content: the content of the comment
+		*   When the article doesn't exist or is not published to the public, return 404
+		*   When finished, return json string in format:
+
+				{
+					"id": 1,
+					"content": "It's awesome!",
+					"commentor": {
+						"id": 2,
+						"username": "Jack",
+						"avatar": "..." // The url to the avatar image
+					},
+					"time": "2015-02-02 12:22:11"
+				}
+
+	*   Implement the front end. When the user click the "Add comment" button, use ajax to send the data to server. When the request succeeds, append the new comment to the comments without refreshing the whole page
 
 
 

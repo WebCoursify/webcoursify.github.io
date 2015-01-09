@@ -16,7 +16,7 @@
   name: MVC-View
 
 - url: /topic-user
-  name: Topic-User(New)
+  name: Topic-User
 
-- url: /
-  name: TheCapstone!(Undone)
+- url: /project-spec
+  name: TheCapstone!(New)

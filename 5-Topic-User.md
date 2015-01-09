@@ -28,7 +28,7 @@ We can use **SALT** together with hashing. Adding *Salt* means we append a rando
 
 1.  Make it more time-consuming to crack passwords. Without salt, the attacker just need to generate a random string each time, hash it and see if it matches any hash value (using a hash table is very convenient for this). But with salt, the attacker need to find out the salt, which is more complex. What're more, each user's salt could be (and should be) different, so the cracking time for a set of user passwords will be significantly longer. 
 
-2.  Salt can help generate different hash values for users with the same password. This can increase the security because a partial leak of the user passwords won't have affect the security of other users' account. 
+2.  Salt can help generate different hash values for users with the same password. This can increase the security because a partial leak of the user passwords won't affect the security of other users' account. 
 
 #### Use Post instead of GET
 
