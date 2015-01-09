@@ -6,14 +6,13 @@
     {% include header.html %}
   </head>
   <body>
-    <div class="nav-toggle"><i class="fa fa-bars fa-2x"></i> Herring Cove </div>
-    <div id = "wrapper">
-      {%include navigation.html %}
-      <div class="container">
-        {{ content }}
-      </div>
-      {% include footer.html %}
-    </div>
+    {% include navigation.html %}
+    <div class="container">
+		<div class="content">
+			{{ content }}
+		</div>
+	</div>
+	{% include aside.html %}
     {% include scripts.html %}
   </body>
 </html>

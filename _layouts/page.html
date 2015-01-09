@@ -1,15 +1,18 @@
 ---
 layout: default
 ---
+    
+    <article>
+      <h1>{{ page.title }}</h1>
+      <h5>Last modified: {{ page.modified }}</h5>
 
-  <div class="article-title">{{ page.title }}</div>
-  <h5>Last modified: {{ page.modified }}</h5>
+        {{ content }}
 
- {{ content }}
-
+    </article>
 
 
- <div id="disqus_thread"></div>
+
+<div id="disqus_thread"></div>
 <script type="text/javascript">
     /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
     var disqus_shortname = 'webcoursify'; // required: replace example with your forum shortname

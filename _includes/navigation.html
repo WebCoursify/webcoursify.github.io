@@ -1,59 +1,14 @@
-<div class="navbar navbar-default" role="navigation">
-  <div class="container">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <p class="navbar-brand">Develop</p>
-      <p class="navbar-brand">Your</p>
-      <p class="navbar-brand">WebAPP</p>
-    </div>
-    <div class="navbar-collapse collapse">
-      <ul class="nav navbar-nav">
-        {% for item in site.data.content %}
-          <li><a href="{{ item.link }}"> {{ item.name }}</a></li>
-        {% endfor %}
-      </ul>
-    </div><!--/.nav-collapse -->
-  </div>
-</div>
+<header>
+<section class="logo">
+<h1><a href="/">WebDev Course</a></h1>
+<h2 class="subheader">by Tyrone Cheung</h2>
+</section>
+<nav id="nav">
+<ul>
+  {% for nav in site.data.nav %}
+    <li><a href="{{ nav.url }}">{{ nav.name }}</a></li>
+  {% endfor %}
+</ul>
+</nav>
 
-<!-- Sidebar -->
-<div id="sidebar-wrapper">
-  <ul class="sidebar-nav">
-    <li class="sidebar-brand">
-        <a href="/">
-          <h1 class="brand">Develop</h1>
-          <h1 class="brand">Your</h1>
-          <h1 class="brand">WebApps</h1>
-        </a>
-        <!-- <h3>{{ site.description }}</h3> -->
-    </li>
-    <hr />
-      <li><b>Contents:</b></li>
-      {% for item in site.data.content %}
-        <li><a href="{{ item.url }}"> {{ item.name }}</a></li>
-      {% endfor %}
-      <!-- <li><a href="{{ site.baseurl }}/list.html">List</a></li>
-      <li><a href="{{ site.baseurl }}/links.html">Links</a></li>
-      <li><a href="{{ site.baseurl }}/projects.html">Projects</a></li>
-      <li><a href="{{ site.baseurl }}/about.html">About</a></li> -->
-    <hr />
-    <div>
-      <li> <a href="/about/">About</a></li>
-      <li> <a href="/project_code/">Download project code</a></li>
-      <li> <a href="{{ site.emailsubscription }}">Subscribe to updates</a> </li>
-      <li> <a href="mailto:{{ site.email }}">Contact</a> </li>
-    </div>
-    <hr />
-    <div id="social-wrapper">
-      <!-- <li> <a href="{{ site.twitter }}"><i class="fa fa-twitter-square"></i> @twitter</a></li>
-      <li> <a href="{{ site.linkedin }}"><i class="fa fa-linkedin-square"></i> linkedin</a> </li>
-      <li> <a href="{{ site.facebook }}"><i class="fa fa-facebook-square"></i> facebook</a></li> -->
-      
-    </div>
-  </ul>
-</div>
+</header>

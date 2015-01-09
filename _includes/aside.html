@@ -1,0 +1,18 @@
+<aside class="sidebar">
+	<section class="module">
+	<h2>FullStack Web Development</h2>
+	<ul class="lesson-list">
+		{% for item in site.data.content %}
+		<li>
+			<a href="{{item.url}}">
+				<span class="lesson-title">{{forloop.index}}-{{item.name}}</span>
+			</a>
+		</li>
+		{% endfor %}
+	</ul>
+	</section>
+
+	<footer>
+	Copyright 2015 Tyrone Cheung
+	</footer>
+</aside>
