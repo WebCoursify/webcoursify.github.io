@@ -57,7 +57,7 @@ Users are allowed to manage their profile. This means they can modify their user
 
 	*   Implement the front end. You'll need to add a button in the article page. The user can click to LIKE or cancel the LIKE by clicking the button
 
-4.  Implement *Add comment* function. User can add comments to an article
+4.  Implement *Comment* function. User can add comments to an article
 
 	*   Implement controller for <code>/api/article/{article_id}/comment/add</code>:
 
@@ -70,7 +70,7 @@ Users are allowed to manage their profile. This means they can modify their user
 				{
 					"id": 1,
 					"content": "It's awesome!",
-					"commentor": {
+					"user": {
 						"id": 2,
 						"username": "Jack",
 						"avatar": "..." // The url to the avatar image
@@ -78,7 +78,13 @@ Users are allowed to manage their profile. This means they can modify their user
 					"time": "2015-02-02 12:22:11"
 				}
 
-	*   Implement the front end. When the user click the "Add comment" button, use ajax to send the data to server. When the request succeeds, append the new comment to the comments without refreshing the whole page
+	*   Implement controller for <code>/api/article/comment/{comment_id}/delete</code>, allowing user to delete comment
+
+		*   Only the author the this comment can delete it
+
+	*   Implement the front end. When the user click the "Add comment" button, use ajax to send the data to server. When the request succeeds, append the new comment to the comments without refreshing the whole page. User can also delete the comments he make
+
+
 
 
 
