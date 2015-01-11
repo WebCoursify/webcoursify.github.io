@@ -39,8 +39,11 @@ That's the shortcut to bind the data (given by <code>locals()</code>, which retu
 
 Let's give a more detailed example. Suppose we have a controller:
 
-    characters = [{'id': 1, 'name': 'Tyrone', 'dead': True}, {'id': 2, 'name': 'Geoffrey', 'dead': True}, {'id': 3, 'name': 'Cerci'}]
-    return render_to_response('./characters.html', {'characters': characters})
+    characters = [{'id': 1, 'name': 'Tyrone', 'dead': True}, 
+                  {'id': 2, 'name': 'Geoffrey', 'dead': True}, 
+                  {'id': 3, 'name': 'Cerci'}]
+    return render_to_response('./characters.html', 
+                              {'characters': characters})
 
 and a html template <code>characters.html</code>:
 
@@ -204,7 +207,7 @@ And for pages that need to use these blocks:
     {% endblock %}
     {% endraw %}
 
-You don't extend every block defined in the parent-template. If a block is not extended in a child-template, it will be just blank, no content, empty string.
+You don't need to extend every block defined in the parent-template. If a block is not extended in a child-template, it will be just blank, no content, empty string.
 
 Django also support **include**. Suppose you have a sidebar you want to show in some pages, but not all, you can put it in a separate file, called 'sidebar.html', for example:
 
@@ -270,29 +273,39 @@ AJAX allow us to send http request and receive responses in the background. Here
     $.ajax({
         url: '/api/login', // the url to request
         type: 'GET', // http method
-        data: {'username': '...', 'password': ...}, // The parameter to contain in the request
+
+        // The parameter to contain in the request
+        data: {'username': '...', 'password': ...}, 
+
+        // The callback function if the request is success
         success: function(res){
-            // res is the content in the http response
+            // res is the http response
             ...
         },
         error: function(e){
-            // when some error happens, for example the status code of the response represents error (4XX, 5XX),
-            // this function will be called. And the e object contains the error information
+            // when some error happens, for example 
+            // the status code of the response represents 
+            // error (4XX, 5XX), this function will be called. 
+            // And the e object contains the error information
             ...
         }
     });
 
 It's very simple, just define:
 
-1.  Where does the request go
-2.  Which http method to use (optional, default "GET")
-3.  What data to encode in the request (optional)
-4.  What to do when the request succeed (optional)
-5.  What to do when some error happen (optional)
+1.  Where does the request go: **url**
+2.  Which http method to use (optional, default "GET"): **type**
+3.  What data to encode in the request (optional): **data**
+4.  What to do when the request succeed (optional): **success**
+5.  What to do when some error happen (optional): **error**
 
 Just one reminder: there's a reason why there's an *Asynchronous* in the name of AJAX. Let's take a look at one example:
 
-    $.ajax({url: ..., success: function(res){ console.log('response received!'); }});
+    $.ajax({
+        url: ..., 
+        success: function(res){ 
+            console.log('response received!'); 
+        }});
     console.log('ajax done!');
 
 This will output (in most cases):
@@ -313,7 +326,8 @@ The usage is pretty simple. This is an example. You might also see this in later
             if(res.error)
                 alert(res.error);
             else{
-                window.location.href = '/article?id=' + res.article.id;
+                window.location.href = '/article?id=' 
+                                       + res.article.id;
             }
         },
         error: function(e){
@@ -335,7 +349,7 @@ We'll be implementing the front end of the website for the assignments in this c
 
         <img src="/resource/pager.png" style="width:75%">
 
-        When user clicks on the pager, it jumps to the corresponding page, with query and article count per page preserved. 
+        When user clicks on the pager, it jumps to the corresponding page, with query and article count per page **preserved**. 
 
     Use <code>make 4_view_articles</code> to test.
 
@@ -382,14 +396,16 @@ We'll be implementing the front end of the website for the assignments in this c
 
     **Hints**
 
-    We can tell you too ways about passing data into javascript. 
+    We can tell you two ways about passing data into javascript. 
 
     *   Directly render the data as variables in javascript. This is the brute-force way, not a very good solution
 
     *   Render the data into html, or attributes inside html elements. For example, you can render the id of the article into an html element like:
 
             {% raw %}
-            <div id="article-data" data-article-id="{{ article.id }}"></div>
+            <div id="article-data" 
+                 data-article-id="{{ article.id }}">
+            </div>
             {% endraw %}
 
         and read the information in javascript with:

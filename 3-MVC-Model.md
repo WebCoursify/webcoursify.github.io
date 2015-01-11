@@ -14,7 +14,7 @@ Most web systems use database as backend support for Model. We're using MySQL fo
 *   [Basic concept](http://www.tutorialspoint.com/sql/sql-rdbms-concepts.htm)
 *   [Oracle tutorial](http://docs.oracle.com/javase/tutorial/jdbc/overview/database.html)
 
-...and look for the meaning of the terms I mentioned. In these tutorials you may also learn about *SQL*, a language used for data manipulation in database (which is not essential if you're just using Django because the encapsulation of Django hide this part from developers, but is necessary for ones who want to become real serious web developers---and we'll have assignments for that as well), if you're not familiar with it yet.
+...and look for the meaning of the terms I mentioned. In these tutorials you may also learn about **SQL**, a language used for data manipulation in database (which is not essential if you're just using Django because the encapsulation of Django hide this part from developers, but is necessary for ones who want to become real serious web developers---and we'll have assignments for that as well), if you're not familiar with it yet.
 
 ### <a id="model"></a> 1. Django's Model
 
@@ -51,11 +51,15 @@ There're basically 4 different types of operations:
 
 1.  Insert
     
-        new_user = User.objects.create(username='...', email='...', password='...')
+        new_user = User.objects.create(username='...', 
+                                       email='...', 
+                                       password='...')
 
     or 
 
-        new_user = User(username='...', email='...', password='...')
+        new_user = User(username='...', 
+                        email='...', 
+                        password='...')
         new_user.save()
 
 2.  Query(Search)
@@ -70,8 +74,9 @@ There're basically 4 different types of operations:
     And we can read the information like:
 
         username = user.username
-        author   = article.author # Note that Article.author is a ForeignKey to the User
-                                  # So article.author will return the User object
+        # Note that Article.author is a ForeignKey to the User
+        # So article.author will return the User object
+        author   = article.author 
         author_name = author.username
 
 3.  Update
@@ -125,10 +130,13 @@ In <code>models.py</code>
         def get_followers(self, user_id):
             """
             :param: user_id, int 
-            :return: Users who are following the user with the given id
+            :return: Users who are following 
+                     the user with the given id
             """
             # Search in the db
-            self.filter(...) # self.filter(...) is equivalent to User.objects.filter(...)
+            # self.filter(...) is equivalent to 
+            # User.objects.filter(...)
+            self.filter(...) 
 
     class User(models.Model):
         objects  = UserManager()
@@ -141,12 +149,16 @@ Here's how to use it:
 
 Another example:
 
-    created_articles = Article.objects.filter(author_id=log_on_user_id, deleted=0)
-    published_articles = created_articles.filter(state=Article.STATE_PUBLISHED)
+    created_articles = Article.objects \
+                       .filter(author_id=log_on_user_id, deleted=0)
+
+    published_articles = created_articles \
+                         .filter(state=Article.STATE_PUBLISHED)
 
 can be written as:
 
-    created_articles = Article.objects.get_articles_by_author_id(log_on_user_id)
+    created_articles = Article.objects \
+                       .get_articles_by_author_id(log_on_user_id)
     published_articles = created_articles.published()
 
 You already know how to make the first line works. Making the second line works is also simple --- all you need to do is to extend the QuerySet class:
@@ -220,7 +232,7 @@ For this chapter, you'll need to implement new functionalities for the platform 
 
         **Specification**: It looks for **"state"** in the data payload, which can be either "published" or "draft". "published" means setting the article's state to published and can be viewed by everyone, while "draft" means setting the article to be a draft and can only be seen by the author.
 
-    *   Delete article. Url pattern is <code>api/article/{article_id}/delete</code>, which you need to add to <code>urls.py</code>. What the controller does is simply remove this article. (*Hint* Remeber what we discuss above?)
+    *   Delete article. Url pattern is <code>api/article/{article_id}/delete</code>, which you need to add to <code>urls.py</code>. What the controller does is simply remove this article. (*Hint*: Remeber what we discuss above?)
 
     Notes: For all these three controllers:
 
@@ -230,7 +242,7 @@ For this chapter, you'll need to implement new functionalities for the platform 
 
     Use <code>3_model_article</code> for testing. 
 
-    BY THE WAY, have you thought about using the same controller for the first two? 
+    BY THE WAY, will you ever think of considering about using the same controller for the first two? 
 
 3.  *Following Relation*. Add four new controllers to:
 
