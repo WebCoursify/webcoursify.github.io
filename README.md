@@ -17,40 +17,19 @@ Here're what you'll get when you finish this course:
 
 We would need you to have some coding experiences. Besides, knowledge of the following topics will be of much help:
 
-1.  Basic syntax of Python, Javascript. The project uses Python as the language for the server side. Javascript is used for front-end development
+*   Basic syntax of Python, Javascript. The project uses Python as the language for the server side. Javascript is used for front-end development
 
-2.  What HTML/CSS look like, and have the basic ability to understand them (for example, one should know "<a\>" represents a hyperlink). Use the following questiosn to test your knowledge on these:
+*   Knowledge of HTML/CSS. You'll need this to develop front-end web page.
 
-    1.  The meaning and usage of the following html tags:
-
-            <form action="/submit" method="GET"> </form>
-            <input type="text/" value="..." placeholder="..." />  
-            <a href="/home" >...</a>   
-            <img src="..."  />  
-            <head> ... </head>
-            <script src="init.js" > ... </script>
-            ...
-
-    2.  For CSS understand these definitions and properties:  
-
-            div{ margin: auto;}  
-            .auto-margin{ margin: auto}  
-            .float-left{ float: left}
-            #container {width: 1070px;}
-            .img-container > img{margin: 10px;}
-            .item-container .item {padding: 10px; width: 33%;}
-            .gallery.container {width: 90%; margin-left: 5%;}
-
-3.  Basic understanding of database(here I mean relational database like MySQL)
+*   Basic understanding of database(here I mean relational database like MySQL)
 
 ### How the course work:  
 
-*   At the very beginning, you will be provided a simple sample code, which is a Django demo project. During the learning of each chapter there will be assignments, for which students will be required to implement some new and small functionalities inside the demo project
+*   At the very beginning, you will be provided a Django demo project. During the learning of each chapter there will be assignments, you're expected to add new functionalities to the demo project
 
-*   At the end, there'll be a relatively "big" assignment, which may count as a small individual project. Students will be required to implement a sub-system based on the code they have
+*   At the end, there'll be a capstone project. Finishing the project makes a completed well-functioned platform.
 
-*   Some chapters will have quiz questions after sections or at the end. We're trying to work on that
-
+*   Some chapters will have quiz questions after sections or at the end (We're trying to work on that)
 
 This course is under active development. If you'll willing to contribute you can visit the [github repo](https://github.com/WebCoursify/webcoursify.github.io). If you have any feedback, you're very welcome to [email us](mailto: {{site.email}})
 
