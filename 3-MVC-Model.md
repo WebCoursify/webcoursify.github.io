@@ -16,7 +16,7 @@ Most web systems use database as backend support for Model. We're using MySQL fo
 
 ...and look for the meaning of the terms I mentioned. In these tutorials you may also learn about *SQL*, a language used for data manipulation in database (which is not essential if you're just using Django because the encapsulation of Django hide this part from developers, but is necessary for ones who want to become real serious web developers---and we'll have assignments for that as well), if you're not familiar with it yet.
 
-### 1. Django's Model
+### <a id="model"></a> 1. Django's Model
 
 Here we'll learn how to **define** and **use** Model in Django. 
 
@@ -169,7 +169,7 @@ You already know how to make the first line works. Making the second line works 
 
 
 
-### 2. Discussions
+### <a id="dis"></a> 2. Discussions
 
 We present several discussions here.
 
@@ -199,7 +199,7 @@ Cons:
 
 It might indeed be a judgement call and I just put it here for demonstration. You can choose whether or not use this strategy when you're desgining new tables in later courses (but please keep the original tables in this way, because our test cases in based on this).
 
-### 3. Assignment
+### <a id="asm"></a> 3. Assignment
 
 For this chapter, you'll need to implement new functionalities for the platform using what you learn in this chapter as well as the last Chapter(*Controller*).
 

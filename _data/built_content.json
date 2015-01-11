@@ -1,0 +1,136 @@
+[
+    {
+        "url": "/preface/", 
+        "sections": [
+            {
+                "id": "why", 
+                "title": "Why develop this course?"
+            }, 
+            {
+                "id": "notes-first", 
+                "title": "Some notes before you start"
+            }
+        ], 
+        "title": "Preface"
+    }, 
+    {
+        "url": "/django-basic/", 
+        "sections": [
+            {
+                "id": "cs", 
+                "title": "1. Client/Server Model"
+            }, 
+            {
+                "id": "mvc", 
+                "title": "2. Model-View-Controller Architecture Pattern"
+            }, 
+            {
+                "id": "django-mvc", 
+                "title": "3. In Practise: Django's MVC"
+            }, 
+            {
+                "id": "assignment", 
+                "title": "4. Assignment: Automatic tests"
+            }
+        ], 
+        "title": "Django Basic"
+    }, 
+    {
+        "url": "/mvc-controller/", 
+        "sections": [
+            {
+                "id": "req-and-res", 
+                "title": "1. Brief introduction of http request and http response"
+            }, 
+            {
+                "id": "django-class", 
+                "title": "2. Django's HttpRequest, HttpResponse, and Url dispatching"
+            }, 
+            {
+                "id": "asm", 
+                "title": "3. Assignment: Implementing Controller"
+            }
+        ], 
+        "title": "MVC-Controller"
+    }, 
+    {
+        "url": "/mvc-model/", 
+        "sections": [
+            {
+                "id": "model", 
+                "title": "1. Django's Model"
+            }, 
+            {
+                "id": "dis", 
+                "title": "2. Discussions"
+            }, 
+            {
+                "id": "asm", 
+                "title": "3. Assignment"
+            }
+        ], 
+        "title": "MVC-model"
+    }, 
+    {
+        "url": "/mvc-view/", 
+        "sections": [
+            {
+                "id": "htmlcssjs", 
+                "title": "1. HTML, CSS, Javascript"
+            }, 
+            {
+                "id": "template", 
+                "title": "2. Template in Django"
+            }, 
+            {
+                "id": "formajax", 
+                "title": "3. Form & Ajax"
+            }, 
+            {
+                "id": "asm", 
+                "title": "4. Assignments"
+            }
+        ], 
+        "title": "MVC-View"
+    }, 
+    {
+        "url": "/topic-user/", 
+        "sections": [
+            {
+                "id": "userauth", 
+                "title": "1. User Authentication"
+            }, 
+            {
+                "id": "cookie", 
+                "title": "2. Cookie"
+            }, 
+            {
+                "id": "session", 
+                "title": "3. Session"
+            }, 
+            {
+                "id": "emailveri", 
+                "title": "4. Email verification"
+            }, 
+            {
+                "id": "asm", 
+                "title": "5. Assignments"
+            }
+        ], 
+        "title": "User Management in WebApp"
+    }, 
+    {
+        "url": "/project-spec/", 
+        "sections": [
+            {
+                "id": "profile", 
+                "title": "1. Profile Management"
+            }, 
+            {
+                "id": "user-interfaction", 
+                "title": "2. User Interactions"
+            }
+        ], 
+        "title": "Capstone Project Specification"
+    }
+]

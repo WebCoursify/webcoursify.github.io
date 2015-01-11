@@ -8,7 +8,7 @@ modified: 01-06-2015
 comments: true
 ---
 
-### 1. Brief introduction of http request and http response
+### <a id="req-and-res"></a> 1. Brief introduction of http request and http response
 
 As we mentioned before, the basic model of how a web system works is:
 
@@ -47,7 +47,7 @@ More details about these methods can also be found [here](http://en.wikipedia.or
 
 *   Data payload. The data payload can be text, html, binary data, etc. 
 
-### 2. Django's HttpRequest, HttpResponse, and Url dispatching
+### <a id="django-class"></a> 2. Django's HttpRequest, HttpResponse, and Url dispatching
 
 Django, and basically all other web frameworks, encapsulate the implementation details of http, so when implementing controllers, developer only need to read data from requests and write data to responses with provided interface. 
 
@@ -114,7 +114,7 @@ This pattern will match all urls in the form of <code>api/article/{a number here
 
 
 
-### 3. Assignment: Implementing Controller
+### <a id="asm"></a>3. Assignment: Implementing Controller
 
 In this assignment, we'll ask you to implement several controllers according to our specifications. 
 

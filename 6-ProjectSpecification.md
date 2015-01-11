@@ -12,7 +12,7 @@ This is the specification for the capstone project. Based on what you learnt in 
 
 Ready?...Go!
 
-### 1. Profile Management
+### <a id="profile"></a> 1. Profile Management
 
 Users are allowed to manage their profile. This means they can modify their username, change their password, and upload pictures as their avatar image.
 
@@ -41,7 +41,7 @@ Users are allowed to manage their profile. This means they can modify their user
 		*   Search for the user with that given email. If not found, return 404
 		*   Generate a random string as the new password for that user. Send the password to that email
 
-### 2. User Interactions
+### <a id="user-interfaction"></a> 2. User Interactions
 
 1.  Implement the user search. You'll need to finish <code>controllers.webpages.people</code> and modify the html template. You should also add page in this case
 
@@ -82,9 +82,11 @@ Users are allowed to manage their profile. This means they can modify their user
 
 		*   Only the author the this comment can delete it
 
-	*   Implement the front end. When the user click the "Add comment" button, use ajax to send the data to server. When the request succeeds, append the new comment to the comments without refreshing the whole page. User can also delete the comments he make
+	*   Implement the front end. When the user click the "Add comment" button, use ajax to send the data to server. When the request succeeds, append the new comment to the comments without refreshing the whole page. User can also delete the comments he made
 
+### <a id="feed"></a> 3. Feed
 
+1.  Implement the <code>webpages.feed</code> controller. In this page, it should shows all articles created by users that the log on user is following. It should also have pagination, support query by keyword, just like in the index page. 
 
 
 

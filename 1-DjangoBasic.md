@@ -9,7 +9,7 @@ comments: true
 ---
 In this chapter, we will show what a typical web system project looks like, using our demo project(which is written with [Django](https://www.djangoproject.com/)) as an example. Although using Django for illustration, some concepts here are widely adopted by many different web frameworks instead of only being used in Django. 
 
-### 1. Client/Server Model
+### <a id="cs"></a> 1. Client/Server Model
 
 Allow me to use an old-fashion image here:
 
@@ -17,7 +17,7 @@ Allow me to use an old-fashion image here:
 
 Basically all web systems follow this model. The web system, as a server, responds to all requests sent by different clients(browers, crawler, etc), using standard protocols. Clients' requests are considered independent of each other. This means when the server is constructing the response to a request sent from one client, it doesn't need to consider the requests from other clients or other requests from the same client, but only the information contained in this request, and probably the information stored in the database or file system on the server side.
 
-### 2. Model-View-Controller Architecture Pattern
+### <a id="mvc"></a> 2. Model-View-Controller Architecture Pattern
 
 This model is widely used in developing softwares that have a GUI, not just in web system. It can be applied to a system as well as a component inside a system. In a word it's a very useful pattern.
 
@@ -27,30 +27,21 @@ A short introduction here is:
 2.  **View**: This component focuses on display information to users(for example, display a list or display a visualization chart) and receive users' interaction (such as button click or keyboard input)
 3.  **Controller**: This is the glue between Model and View. The functions in this component are usually triggered by an event (the user clicks a button, the state of the Model has changed, etc), and take the corresponding actions (search items in database and return the result to View, or send a message to View to notify user that some states of the Model have changed, etc)
 
-### 3. In Practise: Django's MVC
+### <a id="django-mvc"></a> 3. In Practise: Django's MVC
 
 You're expected to run the demo project successful before we actually start to go through Django framework.
 
 #### 3.1 Configuration of Demo Project
 
 1.  First, ensure your machine have installed **Python** and **Pip**. You can check by simply typing "python" and "pip" in the command line. If not, go to the [Python.org](https://www.python.org/) and [Pip Installation](https://pip.pypa.io/en/latest/installing.html)
+
 2.  Install a MySQL server on your machine (You may use "apt-get" for Ubuntu, homebrew for Mac. Go to google and you'll find everything). Note down your username and password. Also install [MySQL-python](https://pypi.python.org/pypi/MySQL-python/). You can just type "pip install MySQL-python"
+
 3.  Uncompress the code archive provided.
+
 4.  Enter the code directory(<code>src/</code>). Type "make install". This will install all the other library dependencies for you. 
-5.  Now we set up the database. First, check that under <code>data/</code> there's a file <code>parse.py</code> and a directory named "rawdata", which contains a lot of text files (the *Reuters-21578* dataset). 
 
-    Now, change directory into <code>test/</code> directory, open the file <code>config.py</code> in text editor, you'll see something like:
-
-        # If you're using locally installed mysql, you don't need to change the host and port
-        MYSQL_HOST     = '127.0.0.1'
-        MYSQL_PORT     = 3306 
-        # Change the user name and password to your owns
-        MYSQL_USERNAME = 'root' 
-        MYSQL_PASSWORD = 'root' 
-        # These should not be changed
-        MYSQL_DB_NAME  = 'web_dev_tutorial'
-
-    Under most circumstances, you'll only need to change the **MYSQL_USERNAME** and **MYSQL_PASSWORD** to the username and password of your local mysql installation. You'll also need to create a database called "web_dev_tutorial" in your local mysql server first. To do this, simply typing:
+5.  Now we set up the database. For the first step, create a database named **web_dev_tutorial**. To do this, simply typing:
 
         mysql -u <your username> -p<your password>
 
@@ -58,11 +49,7 @@ You're expected to run the demo project successful before we actually start to g
 
         create database web_dev_tutorial;
 
-    will create a new database instance.
-
-    After all of these, type <code>make load</code> under the directory of <code>test/</code>. This will automatically parse all the text files and save the result, then load the result into the database.
-
-6.  Next step, we link the project with our database. Use text editor to open <code>src/web_dev_tutorial/settings.py</code>, find the following configurations:
+    will create a new database instance. Then, we link the project with our database. Use text editor to open <code>src/web_dev_tutorial/settings.py</code>, find the following configurations:
     
         DATABASES = {
             'default': {
@@ -73,7 +60,24 @@ You're expected to run the demo project successful before we actually start to g
             }
         }
 
-    Change the user name and password to yours. 
+    Change the user name and password to yours. When you're done, type <code>python manage.py syncdb</code> to create all the tables
+
+6.  Now we load some test data into the database. Check that under <code>data/</code> there's a file <code>parse.py</code> and a directory named "rawdata", which contains a lot of text files (the *Reuters-21578* dataset). 
+
+    Change directory into <code>test/</code> directory, open the file <code>config.py</code> in text editor, you'll see something like:
+
+        # If you're using locally installed mysql, you don't need to change the host and port
+        MYSQL_HOST     = '127.0.0.1'
+        MYSQL_PORT     = 3306 
+        # Change the user name and password to your owns
+        MYSQL_USERNAME = 'root' 
+        MYSQL_PASSWORD = 'root' 
+        # These should not be changed
+        MYSQL_DB_NAME  = 'web_dev_tutorial'
+
+    Under most circumstances, you'll only need to change the **MYSQL_USERNAME** and **MYSQL_PASSWORD** to the username and password of your local mysql installation. 
+
+    After all of these, type <code>make load</code> under the directory of <code>test/</code>. This will automatically parse all the text files and save the result, then load the result into the database.
 
 7.  Under <code>src</code>, type "make". Now it should shows something like:
     
@@ -154,7 +158,7 @@ There're several key components here:
         python manage.py syncdb    # Synchronize database, create tables for all models in all applications
 
 
-### 4. Assignment: Automatic tests
+### <a id="assignment"></a> 4. Assignment: Automatic tests
 
 In previous configuration we have get the system running. In this assignment you're asked to run automatic tests against the running server. By doing so you'll be familiar with the process, which is essential for the rest of the course because many assignments later will be graded on the result on running auto-testing scripts. 
 

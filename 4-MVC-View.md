@@ -10,7 +10,7 @@ comments: true
 
 In this chapter, we'll look at the *View* layer. This layer handles user interface as well as user interaction. 
 
-###  1. HTML, CSS, Javascript
+###  <a id="htmlcssjs"></a> 1. HTML, CSS, Javascript
 
 HTML, CSS, Javascript are languages used to construct the three core components in modern web pages. 
 
@@ -28,7 +28,7 @@ There're many fantastic tutorials where you can learn the basic syntax and usage
 
 You probably don't want to go through all of the tutorials above, because you don't need to. Neither do you need to completely go through any one of them. Different people have different ways of learning things. The way I see it, you just need to know the basics to move forward, and you'll have a deeper understanding of these basic things and learn more complex things during the rest of this chapter as well as the finishing the assignments. Of course, my approach might not fit you, you have your way of learning. But if you haven't tried this way, you might want to give it a shot and see if it's suitable for you.
 
-### 2. Template in Django
+### <a id="template"></a> 2. Template in Django
 
 #### 2.1 Data Binding
 Now we assume you have seen HTML, CSS, and Javascript. The first property provided by Django is *Data-binding*: dynamically generate web page contents based on the data passed from *controller*. You might notice that in most controllers defined in <code>app.controllers.webpages.py</code> return like:
@@ -233,7 +233,7 @@ Now for every place you want to put this sidebar (insert the content of this htm
 
 With these features provided by Django, we can easily *modularize* our views.
 
-### 3. Form & Ajax
+### <a id="formajax"></a> 3. Form & Ajax
 
 There're three main ways to send requests to server:
 
@@ -321,7 +321,7 @@ The usage is pretty simple. This is an example. You might also see this in later
         dataType: 'json'
     });
 
-### 4. Assignments
+### <a id="asm"></a> 4. Assignments
 
 We'll be implementing the front end of the website for the assignments in this chapter. Since auto testing gets a little tricky and limited when it comes to the front end, so our test scripts don't cover all the specifications.
 

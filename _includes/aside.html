@@ -1,12 +1,19 @@
 <aside class="sidebar">
 	<section class="module">
-	<h2>FullStack Web Development</h2>
-	<ul class="lesson-list">
-		{% for item in site.data.content %}
-		<li>
+	<h2 style="margin-left: 24px;">FullStack Web Development</h2>
+	<ul class="lesson-list chapter-list">
+		{% for item in site.data.built_content %}
+		<li data-url="{{item.url}}">
 			<a href="{{item.url}}">
-				<span class="lesson-title">{{forloop.index}}-{{item.name}}</span>
+				<span class="lesson-title">{{forloop.index}}-{{item.title}}</span>
 			</a>
+			{% if item.sections %}
+			<ul class="section-list">
+				{% for sec in item.sections %}
+				<li><a href="#{{sec.id}}">- {{sec.title}}</a></li>
+				{% endfor %}
+			</ul>
+			{% endif %}
 		</li>
 		{% endfor %}
 	</ul>

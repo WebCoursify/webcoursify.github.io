@@ -10,7 +10,7 @@ comments: true
 
 **I'll start my balderdash, you can skip the this section if you're impatient, but please take a look at the notes at the end of this section**
 
-### Why develop this course?  
+### <a id="why"></a> Why develop this course?  
 
 When I was a sophomore, I started doing web development, and I basically taught myself everything --- developing a website, technically speaking, is not difficult at all. There're so many tutorials and official documents available on the internet, open and free to anyone. It's not difficult to setup a demo project using any web framework and any language. It's not difficult to set up a database and query data from it as you wish. It's not difficult at all to develop a pretty web page, with any fancy animation and interaction you can image if you choose some handy libraries. But still, even if one go through all of these tutorials, how confident will he be when he says: I know how to develop a website now ?  
 
@@ -26,7 +26,7 @@ So, that's one of the most important differences between this course and existed
 
 This might sounds like strangling creativity. I'll say: absolutely no. You can be creative about what you want to do, and you can also be creative about how to get something done when given any specific task. The first one is not what we concern here, because the goal of this course is teach the ability to develop a web system. For the second one, we will give you the problem and some guidance and assistance, but we encourage you to solve the problem as creatively as possible. And when you're able to develop a real project, you can use your creativity to think of your own project, and develop it. 
 
-### Some notes before you start
+### <a id="notes-first"></a> Some notes before you start
 
 1.  The configuration of environment, all bash scripts are based on *nix system (I'm using mac). If you're using windows, you can search for solutions online or install a VM  
 2.  In this course I'm teaching my own practical experience when I was doing web development projects. Some approaches may not be appropriate or neat enough in real professionals' eyes, and some contents/techniques may not be as hot as before. I'm open to any kinds of feedback. 

@@ -10,7 +10,7 @@ comments: true
 
 In this chapter, we'll talk about the user authentication, session and cookie.
 
-### 1. User Authentication
+### <a id="userauth"></a> 1. User Authentication
 
 The most basic, perhaps most common scenario of user authentication is "log in". The client sends a unique representation of a user account (user name, or email, for example) as well as the password to the server, the server checks whether the password is valid for this user. If so, mark the client as "log on". Subsequent operations from this accounts will thus be considered as issued by this authenticated user, until the client disconnect, log out or log in with another account. 
 
@@ -40,7 +40,7 @@ As we mentioned, when using GET, the parameter will be encoded in the url. Most 
 
 Typically HTTPS would be a little bit slower than HTTP. So if you really care about performance, you can use HTTPS in authentications such as registeration or logging in, and use normal HTTP in other cases where there's no much sensitive information.
 
-### 2. Cookie
+### <a id="cookie"></a> 2. Cookie
 
 [Cookie](http://en.wikipedia.org/wiki/HTTP_cookie) is a small piece of data sent from a website and stored in a user's web browser while the user is browsing that website. When a user accesses a website with a cookie function for the first time, a cookie is sent from server to the browser and stored with the browser in the local computer. Later when that user goes back to the same website, the website will recognize the user because of the stored cookie with the user's information. 
 
@@ -62,7 +62,7 @@ Here're some more facts:
 
 3.  Most modern browser support cookies, but always allow users to disable them. If you don't wanna be tracked, you might consider starting with disabling the cookie
 
-### 3. Session
+### <a id="session"></a> 3. Session
 
 [Session](http://en.wikipedia.org/wiki/Session_%28computer_science%29) is like a serial of conversations between the server the client. It's *stateful*: states from the previous communication will be saved for the subsequent communications. The most common example is, a user log on once, and then he can access information that requires authentication. He doesn't need to provide password every time he want to access these information, because the server recognizes him to be log on in a previous communication. 
 
@@ -72,7 +72,7 @@ Session can be implemented through Cookie. The server return a session token in 
 	request.session['user'] = {'id': user.id, 'username': user.username}
 	...
 
-### 4. Email verification
+### <a id="emailveri"></a> 4. Email verification
 
 Most websites need to verify the user's email. To do that, the website would send a link to the email used by the user during registration. Clicking that link will verify the mail. If the email is invalid or doesn't belong to the person, he/she won't be able to see and click that link. 
 
@@ -91,7 +91,7 @@ Django provides interface to send emails conveniently:
 
 More details [here](https://docs.djangoproject.com/en/1.7/topics/email/)
 
-### 5. Assignments
+### <a id="asm"></a> 5. Assignments
 
 *Registration*: Implement the registration controller and web page. Specifically, you need to:
 
