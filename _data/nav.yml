@@ -2,6 +2,9 @@
 - url: /about
   name: ReadMe
 
+- url: http://webdemo.zhangty.me/
+  name: Project Demo
+
 - url: /project_code
   name: Download Project
 

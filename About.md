@@ -34,6 +34,7 @@ We would need you to have some coding experiences. Besides, knowledge of the fol
 *   At the end, there'll be a capstone project. Finishing the project makes a completed well-functioned platform.
 *   Some chapters will have quiz questions (We're trying to work on that)
 
+Now, you can start! The sidebar on the right list out the course content. You may also visit the [demo page](http://webdemo.zhangty.me/). Here's a finished version of the capstone project.
 
 This course is under active development. If you'll willing to contribute you can visit the [github repo](https://github.com/WebCoursify/webcoursify.github.io). If you have any feedback, you're very welcome to [email us](mailto:{{site.email}})
 
