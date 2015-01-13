@@ -87,8 +87,12 @@
                 "title": "3. Form & Ajax"
             }, 
             {
+                "id": "richedi", 
+                "title": "4. Rich Text Editor"
+            }, 
+            {
                 "id": "asm", 
-                "title": "4. Assignments"
+                "title": "5. Assignments"
             }
         ], 
         "title": "MVC-View"
@@ -129,6 +133,10 @@
             {
                 "id": "user-interfaction", 
                 "title": "2. User Interactions"
+            }, 
+            {
+                "id": "feed", 
+                "title": "3. Feed"
             }
         ], 
         "title": "Capstone Project Specification"

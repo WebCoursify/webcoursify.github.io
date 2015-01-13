@@ -8,11 +8,13 @@ modified: 01-10-2015
 comments: true
 ---
 
-Click [here](/files/project-01-10-2015.tar) to download the newest source code.
+Click [here](/files/project-01-12-2015.tar) to download the newest source code.
 
 You'll need to start from this demo project and follow the instructions on course content. By doing so you'll eventually finish this platform. Good luck!
 
 **Update logs**:
+
+01-12-2015: Small updates of template
 
 01-10-2015: Minor update of test code
 

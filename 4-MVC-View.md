@@ -335,7 +335,56 @@ The usage is pretty simple. This is an example. You might also see this in later
         dataType: 'json'
     });
 
-### <a id="asm"></a> 4. Assignments
+### <a id="richedi"></a> 4. Rich Text Editor
+
+*Rich Text Editor* allows users to add style to their articles (bold or italic font, underline, list item, etc). *Google doc* is a great example. Here we give a simple tutorial on how to integrate a Rich Text Editor into our platform, so our bloggers can write well-styled articles. 
+
+In this example, we'll use [CKEditor](http://ckeditor.com/). It looks like this:
+
+<img src="/images/ckeditor.png" />
+
+To setup it up, we just need:
+
+1.  Include the ckeditor script file:
+
+        <script 
+            src="//cdn.ckeditor.com/4.4.6/standard/ckeditor.js">
+        </script>
+
+2.  Replace the textarea we have for input content with the rick editor:
+
+    Html:
+
+        ...
+        <textarea name="content" cols=100% rows=12 id="content"></textarea>
+        ...
+
+    Javascript:
+
+        CKEDITOR.replace('content');
+
+Then, it should work!
+
+Now, what we need to add is, read the content from the editor, and add content to the post data, right before the data is about to submit to the server:
+
+    $('#article-form').ajaxForm({
+        ...
+        beforeSubmit: function(arr, form, option){
+            // arr is an array, each element 
+            // is {name: ..., value: ...};
+            // we set the value of field 'content' to the value 
+            // read from the editor
+
+            var contentData = CKEDITOR.instances.content.getData();
+            arr.forEach(function(item){
+                if(item.name == 'content')
+                    item.value = contentData;
+            });
+        },
+        ...
+    });
+
+### <a id="asm"></a> 5. Assignments
 
 We'll be implementing the front end of the website for the assignments in this chapter. Since auto testing gets a little tricky and limited when it comes to the front end, so our test scripts don't cover all the specifications.
 
@@ -371,6 +420,8 @@ We'll be implementing the front end of the website for the assignments in this c
         For example, the <code>action</code> attribute of the form is different. You can use {% raw %}{% if ... %}{% endraw %} for rendering different contents in the same template; and you can use <code>&lt;input value="..."&gt;</code> to assign initial values for inputs, etc.
 
         As you might notice we use the *AJAX FORM* technique mentioned before here. You probably won't need to change this part, but you may want to see how it works
+
+    *   Implement the rich editor. You can follow the instructions above, or find other implementations of open source rich text editor
 
     *   You have already implemented the controller for updating an article in the previous assignment (<code>app.controllers.api.update_article</code>). You just need to make sure that form in the edit article page submits to this controller
 
