@@ -1,37 +1,15 @@
 ---
 layout: page
-permalink: /django-basic/
-title: Django Basic
-tagline: 
-tags: 
+title: Django's MVC
 modified: 12-23-2014
 comments: true
 ---
-In this chapter, we will show what a typical web system project looks like, using our demo project(which is written with [Django](https://www.djangoproject.com/)) as an example. Although using Django for illustration, some concepts here are widely adopted by many different web frameworks instead of only being used in Django. 
 
-### <a id="cs"></a> 1. Client/Server Model
-
-Allow me to use an old-fashion image here:
-
-![Image](/resource/clientserver.png)
-
-Basically all web systems follow this model. The web system, as a server, responds to all requests sent by different clients(browers, crawler, etc), using standard protocols. Clients' requests are considered independent of each other. This means when the server is constructing the response to a request sent from one client, it doesn't need to consider the requests from other clients or other requests from the same client, but only the information contained in this request, and probably the information stored in the database or file system on the server side.
-
-### <a id="mvc"></a> 2. Model-View-Controller Architecture Pattern
-
-This model is widely used in developing softwares that have a GUI, not just in web system. It can be applied to a system as well as a component inside a system. In a word it's a very useful pattern.
-
-A short introduction here is:
-
-1.  **Model**: This component captures the core problem of the system, such as data structure and data storage, core logic code, etc. It's usually the underlying infrastructure of the whole system and it usually doesn't actively interact with the other two components.
-2.  **View**: This component focuses on display information to users(for example, display a list or display a visualization chart) and receive users' interaction (such as button click or keyboard input)
-3.  **Controller**: This is the glue between Model and View. The functions in this component are usually triggered by an event (the user clicks a button, the state of the Model has changed, etc), and take the corresponding actions (search items in database and return the result to View, or send a message to View to notify user that some states of the Model have changed, etc)
-
-### <a id="django-mvc"></a> 3. In Practise: Django's MVC
+### In Practise: Django's MVC
 
 You're expected to run the demo project successful before we actually start to go through Django framework.
 
-#### 3.1 Configuration of Demo Project
+#### 1. Configuration of Demo Project
 
 1.  First, ensure your machine have installed **Python** and **Pip**. You can check by simply typing "python" and "pip" in the command line. If not, go to the [Python.org](https://www.python.org/) and [Pip Installation](https://pip.pypa.io/en/latest/installing.html)
 
@@ -92,7 +70,7 @@ You're expected to run the demo project successful before we actually start to g
 
     This means our blog system is officially up and ready for the next step! 
 
-#### 3.2 Some Notes
+#### 2. Some Notes
 
 The demo project is a some kind of blogging platform. For a simplified design it should have the following features:
 
@@ -103,7 +81,7 @@ The demo project is a some kind of blogging platform. For a simplified design it
 
 The demo project is a good start. We expect you to finish it by implementing features above. We'll divide these work into assignments for each chapter and the final project. 
 
-#### 3.3 Show Me the Code
+#### 3. Show Me the Code
 
 After you extract the demo project, you can see the basic structure of it. It should be more or less like this:
 
@@ -158,46 +136,6 @@ There're several key components here:
         python manage.py syncdb    # Synchronize database, create tables for all models in all applications
 
 
-### <a id="assignment"></a> 4. Assignment: Automatic tests
 
-In previous configuration we have get the system running. In this assignment you're asked to run automatic tests against the running server. By doing so you'll be familiar with the process, which is essential for the rest of the course because many assignments later will be graded on the result on running auto-testing scripts. 
-
-All test scripts can be found on the <code>test/</code> directory. First make sure your server is running on [http://localhost:8000](http://localhost:8000). Then enter this directory. If it's the first time, type 
-    
-    make install 
-
-to install dependencies. Then type
-    
-    make 1_basic
-
-will trigger the test script for this assignment. If everything is fine, it should show something like:
-
-    python test_basic.py
-    .
-    ----------------------------------------------------------------------
-    Ran 1 test in 0.617s
-
-    OK
-
-If you see this, then you should be able to go to the next chapter and start learning some serious stuff.
-
->   I can give the details about the implementation of this test script. Basically, it reads the index page content by sending a request to [http://localhost:8000](http://localhost:8000). By our design, when the request contains no query parameter, this page will display the newest 10 articles (order by post time in descending order). In html the script searches for all html elements with <code>class="article-list-item-main"</code> and read the title of these articles by reading the attribute <code>data-article-title</code> of these elements. They will be compared with the groundtruths. 
-
-### Summary
-
-By finishing this chapter, you should:
-
-1.  Have a basic understanding of MVC architecture, and Django project structure.
-2.  Be familiar with how to start the server, how to run automatic tests. 
-3.  Have in mind about what the current platform looks like, and what it will look like when it's completed. 
-
-
-### Appendix:
-
-1.  It would be a good idea to use IDE help you develop this project. The one I'm using is [PyCharm](), which looks like:
-
-    ![PyCharm](/resource/pycharm.png)
-
-2.  You should use some version control tools to help manage the code better. I recommend [git](http://git-scm.com/). There're many tutorials on that. Google online, learn the basic usage, then learn the advance features during your usage when needed.
 
 

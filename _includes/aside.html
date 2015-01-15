@@ -10,7 +10,7 @@
 			{% if item.sections %}
 			<ul class="section-list">
 				{% for sec in item.sections %}
-				<li><a href="#{{sec.id}}">- {{sec.title}}</a></li>
+				<li><a href="{{sec.url}}">{{forloop.index}} - {{sec.title}}</a></li>
 				{% endfor %}
 			</ul>
 			{% endif %}

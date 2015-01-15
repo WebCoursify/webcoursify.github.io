@@ -1,6 +1,5 @@
 ---
 layout: page
-permalink: /project-spec/
 title: Capstone Project Specification
 tagline: 
 tags: 

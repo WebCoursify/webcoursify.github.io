@@ -1,144 +1,105 @@
 [
     {
-        "url": "/preface/", 
-        "sections": [
-            {
-                "id": "why", 
-                "title": "Why develop this course?"
-            }, 
-            {
-                "id": "notes-first", 
-                "title": "Some notes before you start"
-            }
-        ], 
+        "url": "/content/0-Preface.html", 
+        "name": "Preface", 
         "title": "Preface"
     }, 
     {
-        "url": "/django-basic/", 
+        "url": "/content/1-DjangoBasic", 
         "sections": [
             {
-                "id": "cs", 
-                "title": "1. Client/Server Model"
+                "url": "/content/1-DjangoBasic/1-ClientServer.html", 
+                "name": "Client-Server & MVC", 
+                "title": "Client-Server Model and MVC Design Pattern"
             }, 
             {
-                "id": "mvc", 
-                "title": "2. Model-View-Controller Architecture Pattern"
+                "url": "/content/1-DjangoBasic/2-DjangoMVC.html", 
+                "name": "Django's MVC", 
+                "title": "Django's MVC"
             }, 
             {
-                "id": "django-mvc", 
-                "title": "3. In Practise: Django's MVC"
-            }, 
-            {
-                "id": "assignment", 
-                "title": "4. Assignment: Automatic tests"
+                "url": "/content/1-DjangoBasic/3-Assignment.html", 
+                "name": "Assignment-Django Basic", 
+                "title": "Assignment-Django Basic"
             }
         ], 
+        "name": "Django Basic", 
         "title": "Django Basic"
     }, 
     {
-        "url": "/mvc-controller/", 
+        "url": "/content/2-MVC-Controller", 
         "sections": [
             {
-                "id": "req-and-res", 
-                "title": "1. Brief introduction of http request and http response"
+                "url": "/content/2-MVC-Controller/1-DjangoReqRes.html", 
+                "name": "Django's HttpRequest, HttpResponse, and Url dispatching", 
+                "title": "Django's HttpRequest, HttpResponse, and Url dispatching"
             }, 
             {
-                "id": "django-class", 
-                "title": "2. Django's HttpRequest, HttpResponse, and Url dispatching"
-            }, 
-            {
-                "id": "asm", 
-                "title": "3. Assignment: Implementing Controller"
+                "url": "/content/2-MVC-Controller/2-Assignment.html", 
+                "name": "Assignment", 
+                "title": "Assignment"
             }
         ], 
-        "title": "MVC-Controller"
+        "name": "Intro to Django's Controller", 
+        "title": "Intro to Django's Controller"
     }, 
     {
-        "url": "/mvc-model/", 
+        "url": "/content/3-MVC-Model", 
         "sections": [
             {
-                "id": "model", 
-                "title": "1. Django's Model"
+                "url": "/content/3-MVC-Model/1-DjangoModel.html", 
+                "name": "Using Model in Django", 
+                "title": "Using Model in Django"
             }, 
             {
-                "id": "dis", 
-                "title": "2. Discussions"
+                "url": "/content/3-MVC-Model/2-FurtherDiscussion.html", 
+                "name": "Further discussion with regard to Model", 
+                "title": "Further discussion with regard to Model"
             }, 
             {
-                "id": "asm", 
-                "title": "3. Assignment"
+                "url": "/content/3-MVC-Model/3-Assignment.html", 
+                "name": "Assignments for Model", 
+                "title": "Assignments for Model"
             }
         ], 
-        "title": "MVC-model"
+        "name": "Model Layer in Django", 
+        "title": "Model Layer in Django"
     }, 
     {
-        "url": "/mvc-view/", 
+        "url": "/content/4-MVC-View", 
         "sections": [
             {
-                "id": "htmlcssjs", 
-                "title": "1. HTML, CSS, Javascript"
+                "url": "/content/4-MVC-View/2-DjangoTemplate.html", 
+                "name": "Template in Django", 
+                "title": "Template in Django"
             }, 
             {
-                "id": "template", 
-                "title": "2. Template in Django"
+                "url": "/content/4-MVC-View/3-FormAjax.html", 
+                "name": "Form, Ajax", 
+                "title": "Form, Ajax"
             }, 
             {
-                "id": "formajax", 
-                "title": "3. Form & Ajax"
+                "url": "/content/4-MVC-View/4-RichEditor.html", 
+                "name": "Using Rich Text Editor with Ajax", 
+                "title": "Using Rich Text Editor with Ajax"
             }, 
             {
-                "id": "richedi", 
-                "title": "4. Rich Text Editor"
-            }, 
-            {
-                "id": "asm", 
-                "title": "5. Assignments"
+                "url": "/content/4-MVC-View/5-Assignment.html", 
+                "name": "Assignments for View", 
+                "title": "Assignments for View"
             }
         ], 
-        "title": "MVC-View"
+        "name": "The View - User Interaction", 
+        "title": "The View - User Interaction"
     }, 
     {
-        "url": "/topic-user/", 
-        "sections": [
-            {
-                "id": "userauth", 
-                "title": "1. User Authentication"
-            }, 
-            {
-                "id": "cookie", 
-                "title": "2. Cookie"
-            }, 
-            {
-                "id": "session", 
-                "title": "3. Session"
-            }, 
-            {
-                "id": "emailveri", 
-                "title": "4. Email verification"
-            }, 
-            {
-                "id": "asm", 
-                "title": "5. Assignments"
-            }
-        ], 
+        "url": "/content/5-Topic-User.html", 
+        "name": "User Management in WebApp", 
         "title": "User Management in WebApp"
     }, 
     {
-        "url": "/project-spec/", 
-        "sections": [
-            {
-                "id": "profile", 
-                "title": "1. Profile Management"
-            }, 
-            {
-                "id": "user-interfaction", 
-                "title": "2. User Interactions"
-            }, 
-            {
-                "id": "feed", 
-                "title": "3. Feed"
-            }
-        ], 
+        "url": "/content/6-ProjectSpecification.html", 
+        "name": "Capstone Project Specification", 
         "title": "Capstone Project Specification"
     }
 ]

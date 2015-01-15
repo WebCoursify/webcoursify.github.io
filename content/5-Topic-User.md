@@ -1,6 +1,5 @@
 ---
 layout: page
-permalink: /topic-user/
 title: User Management in WebApp
 tagline: 
 tags: 

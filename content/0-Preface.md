@@ -1,6 +1,5 @@
 ---
 layout: page
-permalink: /preface/
 title: Preface
 tagline: 
 tags: 
