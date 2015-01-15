@@ -5,7 +5,7 @@
 		{% for item in site.data.built_content %}
 		<li data-url="{{item.url}}">
 			<a href="{{item.url}}">
-				<span class="lesson-title">{{forloop.index}}-{{item.title}}</span>
+				<span class="lesson-title">{{forloop.index}} - {{item.title}}</span>
 			</a>
 			{% if item.sections %}
 			<ul class="section-list">

@@ -1,6 +1,6 @@
 ---
 layout: page
-title: The View - User Interaction
+title: The View-User Interaction
 tagline: 
 tags: 
 modified: 12-29-2014
