@@ -67,9 +67,13 @@ Here're some more facts:
 
 Session can be implemented through Cookie. The server return a session token in the response when a client access the website for the first time. The subsequent requests from that client will contain the session token in the cookie, so the server can read the session token and decide which session it is. The server can store many useful information associated with the session, such as the log on user's id. In our project, that's how we "mark" a client as log on:
 
-	...
-	request.session['user'] = {'id': user.id, 'username': user.username}
-	...
+{% highlight python %}
+
+...
+request.session['user'] = {'id': user.id, 'username': user.username}
+...
+
+{% endhighlight %}
 
 ### <a id="emailveri"></a> 4. Email verification
 
@@ -83,10 +87,14 @@ Send that url to the user. When the user visits the url, you can retrieve the to
 
 Django provides interface to send emails conveniently:
 
-	from django.core.mail import send_mail
+{% highlight python %}
 
-	send_mail('Subject here', 'Here is the message.', 'from@example.com',
-	    ['to@example.com'], fail_silently=False)
+from django.core.mail import send_mail
+
+send_mail('Subject here', 'Here is the message.', 'from@example.com',
+    ['to@example.com'], fail_silently=False)
+
+{% endhighlight %}
 
 More details [here](https://docs.djangoproject.com/en/1.7/topics/email/)
 

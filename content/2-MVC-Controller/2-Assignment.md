@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Assignment: Implementing Controller
+title: Assignment for Implementing Controller
 modified: 01-06-2015
 comments: true
 ---

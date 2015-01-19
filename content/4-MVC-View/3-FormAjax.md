@@ -22,11 +22,13 @@ A *form* in HTML is literally, a form. Typically it's where you fill information
 
 There're many types of *input* for forms, such as text input, checkbox, radio checkbox, select menu, file, etc. You can refer to the [w3school tutorial](http://www.w3schools.com/html/) for a complete list. When submitted, all information from input elements within the form will be contained in the http request. Different information/fields are identified by the 'name' attribute. This form
 
-    <form method="POST" action="....">
-        <input type="text" name="username" value="...">
-        <input type="password" name="password" value="...">
-        <input type="submit" value="Login">
-    </form>
+{% highlight html %}
+<form method="POST" action="....">
+    <input type="text" name="username" value="...">
+    <input type="password" name="password" value="...">
+    <input type="submit" value="Login">
+</form>
+{% endhighlight %}
 
 contains two fields, username and password. The name should be unique, except for the case of radio checkbox. All radio checkboxes with the same "name" will be consider as a group, and users are only allowed to check one box in this group. 
 
@@ -40,26 +42,30 @@ In the example above there's an input with <code>type="submit"</code>. This is t
 
 AJAX allow us to send http request and receive responses in the background. Here's an example (using *jQuery*):
 
-    $.ajax({
-        url: '/api/login', // the url to request
-        type: 'GET', // http method
+{% highlight javascript %}
 
-        // The parameter to contain in the request
-        data: {'username': '...', 'password': ...}, 
+$.ajax({
+    url: '/api/login', // the url to request
+    type: 'GET', // http method
 
-        // The callback function if the request is success
-        success: function(res){
-            // res is the http response
-            ...
-        },
-        error: function(e){
-            // when some error happens, for example 
-            // the status code of the response represents 
-            // error (4XX, 5XX), this function will be called. 
-            // And the e object contains the error information
-            ...
-        }
-    });
+    // The parameter to contain in the request
+    data: {'username': '...', 'password': ...}, 
+
+    // The callback function if the request is success
+    success: function(res){
+        // res is the http response
+        ...
+    },
+    error: function(e){
+        // when some error happens, for example 
+        // the status code of the response represents 
+        // error (4XX, 5XX), this function will be called. 
+        // And the e object contains the error information
+        ...
+    }
+});
+
+{% endhighlight %}
 
 It's very simple, just define:
 
@@ -71,12 +77,16 @@ It's very simple, just define:
 
 Just one reminder: there's a reason why there's an *Asynchronous* in the name of AJAX. Let's take a look at one example:
 
-    $.ajax({
-        url: ..., 
-        success: function(res){ 
-            console.log('response received!'); 
-        }});
-    console.log('ajax done!');
+{% highlight javascript %}
+
+$.ajax({
+    url: ..., 
+    success: function(res){ 
+        console.log('response received!'); 
+    }});
+console.log('ajax done!');
+
+{% endhighlight %}
 
 This will output (in most cases):
 
@@ -91,16 +101,20 @@ That's a weird subsection title. But what I'm trying to say is, we can easily su
 
 The usage is pretty simple. This is an example. You might also see this in later assignments:
 
-    $('#article-form').ajaxForm({
-        success: function(res){
-            if(res.error)
-                alert(res.error);
-            else{
-                window.location.href = '/article?id=' 
-                                       + res.article.id;
-            }
-        },
-        error: function(e){
-        },
-        dataType: 'json'
-    });
+{% highlight javascript %}
+
+$('#article-form').ajaxForm({
+    success: function(res){
+        if(res.error)
+            alert(res.error);
+        else{
+            window.location.href = '/article?id=' 
+                                   + res.article.id;
+        }
+    },
+    error: function(e){
+    },
+    dataType: 'json'
+});
+
+{% endhighlight %}

@@ -13,22 +13,26 @@ Here we'll learn how to **define** and **use** Model in Django.
 
 Let's see the following example:
 
-    class User(models.Model):
-        username = models.CharField(max_length=50)
-        email    = models.CharField(max_length=50, unique=True)
-        password = models.CharField(max_length=50)
-        description = models.CharField(max_length=512, null=True)
-        role     = models.SmallIntegerField()
-        deleted  = models.BooleanField(default=0)
+{% highlight python %}
 
-    class Article(models.Model):
-        author   = models.ForeignKey('User')
-        title    = models.CharField(max_length=100)
-        content  = models.TextField()
-        time_create = models.DateTimeField()
-        time_update = models.DateTimeField(auto_now=True)
-        state    = models.SmallIntegerField()
-        deleted  = models.BooleanField(default=0)
+class User(models.Model):
+    username = models.CharField(max_length=50)
+    email    = models.CharField(max_length=50, unique=True)
+    password = models.CharField(max_length=50)
+    description = models.CharField(max_length=512, null=True)
+    role     = models.SmallIntegerField()
+    deleted  = models.BooleanField(default=0)
+
+class Article(models.Model):
+    author   = models.ForeignKey('User')
+    title    = models.CharField(max_length=100)
+    content  = models.TextField()
+    time_create = models.DateTimeField()
+    time_update = models.DateTimeField(auto_now=True)
+    state    = models.SmallIntegerField()
+    deleted  = models.BooleanField(default=0)
+
+{% endhighlight %}
 
 Each class corresponds to a table in the database. <code>username</code>, <code>email</code> and other fields are columns in the table. Django provides many built-in fields such as integer, string(CharField or Text), datetime, etc, and they're sufficient for developers' need at most of the time. 
 
@@ -38,54 +42,80 @@ That's basically how to define the models, now let's see how to use them.
 
 There're basically 4 different types of operations:
 
-1.  Insert
+1.Insert
     
-        new_user = User.objects.create(username='...', 
-                                       email='...', 
-                                       password='...')
+{% highlight python %}
+new_user = User.objects.create(username='...', email='...', password='...')
+{% endhighlight %}
 
-    or 
+or 
 
-        new_user = User(username='...', 
-                        email='...', 
-                        password='...')
-        new_user.save()
+{% highlight python %}
+new_user = User(username='...', email='...', password='...')
+new_user.save()
+{% endhighlight %}
 
-2.  Query(Search)
+2.Query(Search)
 
-        # Find a list of users
-        users = User.objects.filter(role=1, deleted=0) 
+{% highlight python %}
 
-        # Find one unique row. When there's no matching row or more
-        # than one matching rows, an exception will be raise
-        user  = User.objects.get(username='...', deleted=0) 
+# Find a list of users
+users = User.objects.filter(role=1, deleted=0) 
 
-    And we can read the information like:
+# Find one unique row. When there's no matching row or more
+# than one matching rows, an exception will be raise
+user  = User.objects.get(username='...', deleted=0) 
 
-        username = user.username
-        # Note that Article.author is a ForeignKey to the User
-        # So article.author will return the User object
-        author   = article.author 
-        author_name = author.username
+{% endhighlight %}
 
-3.  Update
+And we can read the information like:
+
+{% highlight python %}
+
+username = user.username
+# Note that Article.author is a ForeignKey to the User
+# So article.author will return the User object
+author   = article.author 
+author_name = author.username
+
+{% endhighlight %}
+
+3.Update
         
-        User.objects.filter(username='...').update(password='...')
+{% highlight python %}
 
-    or
+    User.objects.filter(username='...').update(password='...')
 
-        user = User.objects.get(username='...')
-        user.password = '...'
-        user.save()
+{% endhighlight %}
 
-4.  Delete
+or
 
-        User.objects.filter(username='...').delete()
+{% highlight python %}
 
-    or
+user = User.objects.get(username='...')
+user.password = '...'
+user.save()
 
-        user = User.objects.get(username='...')
-        user.delete()
+{% endhighlight %}
+
+
+4.Delete
+
+{% highlight python %}
+
+User.objects.filter(username='...').delete()
+
+{% endhighlight %}
+
+or
+
+{% highlight python %}
+
+user = User.objects.get(username='...')
+user.delete()
+
+{% endhighlight %}
+
 
 #### 3. More complex things: Relations
 
@@ -115,55 +145,68 @@ For instance, in many different places you need to retrieve all followers of a u
 
 In <code>models.py</code>
 
-    class UserManager(models.Manager):
-        def get_followers(self, user_id):
-            """
-            :param: user_id, int 
-            :return: Users who are following 
-                     the user with the given id
-            """
-            # Search in the db
-            # self.filter(...) is equivalent to 
-            # User.objects.filter(...)
-            self.filter(...) 
+{% highlight python %}
 
-    class User(models.Model):
-        objects  = UserManager()
-        username = models.CharField(max_length=50)
-        ...
+class UserManager(models.Manager):
+    def get_followers(self, user_id):
+        """
+        :param: user_id, int 
+        :return: Users who are following 
+                 the user with the given id
+        """
+        # Search in the db
+        # self.filter(...) is equivalent to 
+        # User.objects.filter(...)
+        self.filter(...) 
+
+class User(models.Model):
+    objects  = UserManager()
+    username = models.CharField(max_length=50)
+    ...
+
+{% endhighlight %}
 
 Here's how to use it:
 
+{% highlight python %}
     followers = User.objects.get_followers(log_on_user_id)
+{% endhighlight %}
 
 Another example:
 
-    created_articles = Article.objects \
-                       .filter(author_id=log_on_user_id, deleted=0)
+{% highlight python %}
 
-    published_articles = created_articles \
-                         .filter(state=Article.STATE_PUBLISHED)
+created_articles = Article.objects.filter(author_id=log_on_user_id, deleted=0)
+published_articles = created_articles.filter(state=Article.STATE_PUBLISHED)
+
+{% endhighlight %}
 
 can be written as:
 
-    created_articles = Article.objects \
-                       .get_articles_by_author_id(log_on_user_id)
-    published_articles = created_articles.published()
+{% highlight python %}
+
+created_articles = Article.objects.get_articles_by_author_id(log_on_user_id)
+published_articles = created_articles.published()
+
+{% endhighlight %}
 
 You already know how to make the first line works. Making the second line works is also simple --- all you need to do is to extend the QuerySet class:
 
-    class ArticleQuerySet(models.query.QuerySet):
-        def published(self):
-            return self.filter(state=Article.STATE_PUBLISHED)
+{% highlight python %}
 
-    class ArticleManager(models.Manager):
-        def get_queryset(self):
-            return ArticleQuerySet(self.model)
+class ArticleQuerySet(models.query.QuerySet):
+    def published(self):
+        return self.filter(state=Article.STATE_PUBLISHED)
 
-        def get_articles_by_author_id(self, author_id):
-            ...
+class ArticleManager(models.Manager):
+    def get_queryset(self):
+        return ArticleQuerySet(self.model)
 
-    class Article(models.Model):
-        objects = ArticleManager()
+    def get_articles_by_author_id(self, author_id):
         ...
 
+class Article(models.Model):
+    objects = ArticleManager()
+    ...
+
+{% endhighlight %}
