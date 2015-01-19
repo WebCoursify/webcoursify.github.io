@@ -115,6 +115,7 @@ There're several key components here:
                 description = models.CharField(max_length=512, null=True)
                 role     = models.SmallIntegerField()
                 deleted  = models.BooleanField(default=0)
+            
 
     *   **controllers.py**: As we said before, a controller is something that responds to actions. In Django, a controller is a function, which takes the client's request as parameter and return a response object. The *URL Dispatching* in Django decides which function to use when the client request resources from a specific url
 
@@ -132,8 +133,11 @@ There're several key components here:
 
     This script provides commands such as start the server, synchronize database to us. Sample usages are:
 
-        python manage.py runserver # Run the server on localhost:8000
-        python manage.py syncdb    # Synchronize database, create tables for all models in all applications
+        # Run the server on localhost:8000
+        python manage.py runserver 
+        
+        # Synchronize database, create tables for all models in all applications
+        python manage.py syncdb    
 
 
 

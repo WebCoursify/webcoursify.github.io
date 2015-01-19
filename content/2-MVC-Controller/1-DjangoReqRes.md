@@ -9,34 +9,37 @@ Django, and basically all other web frameworks, encapsulate the implementation d
 
 Let's take a look at one example controller (in <code>app.api.login</code>):
 
-    def login(request):
+{% highlight python %}
 
-        #########################
-        # Read the data we need #
-        #########################
-        email = request.REQUEST.get('email', None)
-        password = request.REQUEST.get('password', None)
-        if email is None or password is None:
-            return HttpResponseBadRequest('email and password required')
+def login(request):
 
-        ########################
-        # Process the business #
-        ########################
-        password = md5(password)
-        user = User.objects.filter(email=email, password=password, deleted=0)
-        if not user.exists():
-            return HttpResponse(json.dumps({'error': 'Incorrect email/password'}))
+    #########################
+    # Read the data we need #
+    #########################
+    email = request.REQUEST.get('email', None)
+    password = request.REQUEST.get('password', None)
+    if email is None or password is None:
+        return HttpResponseBadRequest('email and password required')
 
-        user = user[0]
+    ########################
+    # Process the business #
+    ########################
+    password = md5(password)
+    user = User.objects.filter(email=email, password=password, deleted=0)
+    if not user.exists():
+        return HttpResponse(json.dumps({'error': 'Incorrect email/password'}))
 
-        # Here's how we mark a user as log on
-        request.session['user'] = {'id': user.id, 'username': user.username}
+    user = user[0]
 
-        #######################
-        # Return the response #
-        #######################
-        return HttpResponse(json.dumps({'success': True}))
+    # Here's how we mark a user as log on
+    request.session['user'] = {'id': user.id, 'username': user.username}
 
+    #######################
+    # Return the response #
+    #######################
+    return HttpResponse(json.dumps({'success': True}))
+
+{% endhighlight %}
 
 This is a very good example for what typical controller may be like:
 
@@ -54,30 +57,39 @@ Now, we know the basic strategy to write a controller. What we're going to learn
 
 Let's take a look the <code>web_dev_tutorial/urls.py</code>:
 
-    ...
-    url(r'^$', webpages.all_articles),
-    url(r'^articles$', webpages.all_articles),
-    url(r'^article$', webpages.article_detail),
-    url(r'^feeds$', webpages.feeds),
-    ...
+{% highlight python %}
+
+...
+url(r'^$', webpages.all_articles),
+url(r'^articles$', webpages.all_articles),
+url(r'^article$', webpages.article_detail),
+url(r'^feeds$', webpages.feeds),
+...
+
+{% endhighlight %}
 
 Each line up there defines a dispatching strategy. There're two arguments in the url(...). The first one defines the *url pattern*, the second one gives the corresponding controller. By doing so, every http request with urls match the specific pattern will be processed by the corresponding controller. 
 
 Let's take a closer look at the pattern definition. It's in the form of <code>r'...'</code>, the <code>r</code> prefix indicates this is a regular expression. Note that <code>^</code> indicates the start of a string, meaning there's nothing before; and <code>$</code> indicates the end. Let's see some examples:
 
-    r'^$'                  # Exactly match empty string
-    r'^article$'           # Exactly match string 'article'
-    r'article$'            # Match all strings end with 'article'
-    r'^article'            # Match all strings start with 'article'
-    r'article'             # Match all strings contain 'article' 
-                           # as a substring
+{% highlight python %}
+r'^$'                  # Exactly match empty string
+r'^article$'           # Exactly match string 'article'
+r'article$'            # Match all strings end with 'article'
+r'^article'            # Match all strings start with 'article'
+r'article'             # Match all strings contain 'article' as a substring
+{% endhighlight %}
 
 Django's dispatching support embedded parameter in the url. One example is:
 
-    url(r'^api/article/(?P<article_id>[0-9]+)/update$', 
-        api.update_article)
+{% highlight python %}
+    url(r'^api/article/(?P<article_id>[0-9]+)/update$', api.update_article)
+{% endhighlight %}
 
 This pattern will match all urls in the form of <code>/api/article/{a number here}/update</code>, for example '/api/article/1111/update' or '/api/article/15213/update'. The parameter defined in the url will also be parsed and passed into the controller. The definition of <code>api.update_article</code> will be like:
 
-    def update_article(request, article_id):
-        ...
+{% highlight python %}
+def update_article(request, article_id):
+    ...
+
+{% endhighlight %}
