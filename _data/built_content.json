@@ -36,8 +36,8 @@
             }, 
             {
                 "url": "/content/2-MVC-Controller/2-Assignment.html", 
-                "name": "Assignment", 
-                "title": "Assignment"
+                "name": "Assignment for Implementing Controller", 
+                "title": "Assignment for Implementing Controller"
             }
         ], 
         "name": "Intro to Django's Controller", 
@@ -101,5 +101,17 @@
         "url": "/content/6-ProjectSpecification.html", 
         "name": "Capstone Project Specification", 
         "title": "Capstone Project Specification"
+    }, 
+    {
+        "url": "/content/99-ExtraMaterials", 
+        "sections": [
+            {
+                "url": "/content/99-ExtraMaterials/1-IntroToGit.html", 
+                "name": "Introduction to Git", 
+                "title": "Introduction to Git"
+            }
+        ], 
+        "name": "Extra Tutorials", 
+        "title": "Extra Tutorials"
     }
 ]
