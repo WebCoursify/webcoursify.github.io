@@ -9,4 +9,4 @@ comments: true
 
 Here we'll give several references about deploying Django site into production environment. We'll constantly update this page. 
 
-*  (Deploy on Ubuntu with Apache)[https://www.digitalocean.com/community/tutorials/using-mod_wsgi-to-serve-applications-on-ubuntu-12-04]
+*  [Deploy on Ubuntu with Apache](https://www.digitalocean.com/community/tutorials/using-mod_wsgi-to-serve-applications-on-ubuntu-12-04)
