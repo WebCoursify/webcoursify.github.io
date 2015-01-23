@@ -522,7 +522,7 @@ ul.lesson-list li > a{
 ul.lesson-list > li:not(.active) > a:hover {
     background: #e1e1e1;
 }
-ul.lesson-list li.active > a{
+ul.lesson-list > li.active > a{
     background: #e1e1e1
 }
 
@@ -618,7 +618,13 @@ code{
 pre{
     overflow: auto;
 }
+
+ul.chapter-list > li.active{
+    /*font-weight: bold;*/
+}
+
 ul.chapter-list > li.active > ul.section-list{
+    font-weight: normal;
     display: block;
 }
 
@@ -635,9 +641,16 @@ ul.section-list > li{
     padding-top: 3px;
     /*padding-bottom: 3px;*/
 }
-ul.section-list > li:hover{
+
+ul.section-list > li:hover, ul.section-list > li.active{
+    
     background: #fff;
 }
+
+ul.section-list > li.active{
+    font-weight: bold;;
+}
+
 aside.sidebar section.module{
     margin-left: 0;
     margin-right: 0;

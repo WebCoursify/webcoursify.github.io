@@ -35,11 +35,14 @@
 	if(pathname[pathname.length - 1] == '/')
 		pathname = pathname.substring(0, pathname.length - 1);
 
+	function setActive(){
+		var $this = $(this);
+		if($this.data('url') && pathname.indexOf($this.data('url')) == 0){
+			$(this).addClass('active');
+		}
+	}
 	$('ul.chapter-list li')
-		.each(function(){
-			var $this = $(this);
-			if($this.data('url') && pathname.indexOf($this.data('url')) == 0){
-				$(this).addClass('active');
-			}
-		});
+		.each(setActive);
+	$('ul.section-list li')
+		.each(setActive);
 </script>
