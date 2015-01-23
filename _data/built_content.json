@@ -109,6 +109,11 @@
                 "url": "/content/99-ExtraMaterials/1-IntroToGit.html", 
                 "name": "Introduction to Git", 
                 "title": "Introduction to Git"
+            }, 
+            {
+                "url": "/content/99-ExtraMaterials/2-Deployment.html", 
+                "name": "Deployment", 
+                "title": "Deployment"
             }
         ], 
         "name": "Extra Tutorials", 
