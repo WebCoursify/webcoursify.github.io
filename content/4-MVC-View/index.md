@@ -22,7 +22,7 @@ There're many fantastic tutorials where you can learn the basic syntax and usage
 *Note: when learning javascript, I suggest you first understand the syntax and basic usage; then when you go to the part about how to use javascript to manipulate DOM(html elements in web page), you can also learn how to use [jQuery](http://jquery.com/), which provides a much nicer interface for selecting and do operations on DOM*
 
 *   W3Schools: [HTML](http://www.w3schools.com/html/), [CSS](http://www.w3schools.com/css/default.asp). Great tutorials to help you understand the basic. The [jQuery tutorial](http://www.w3schools.com/jquery/) is also very helpful
-*   [Mozilla Developer Guid](https://developer.mozilla.org/en-US/docs/Web): Pretty detailed and comprehensive introductions
+*   [Mozilla Developer Guide](https://developer.mozilla.org/en-US/docs/Web): Pretty detailed and comprehensive introductions
 *   [Here](http://htmldog.com/guides/html/beginner/) is another tutorial for HTML, with more detailed text explanations
 *   [Codecademy](http://www.codecademy.com/en/tracks/web) is also a good resource. It provides really good programming interface for practising
 

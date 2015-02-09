@@ -32,6 +32,30 @@ Now let's begin!
 
 3.  You may also use <code>make 2_controller</code> to test all assignments in this chapter
 
+**How to debug your server**
+
+When the request goes wrong, the first thing you need to do is to check the response code:
+
+*   200: Server return successfully, but it's probably returning unexpected results
+*   404: Server cannot find the request you want. You probably sent the request to the wrong url or you didn't configure the url dispatcher correctly
+*   403: This is a tricky one. One possible reason is, your requested with POST, but you didn't use @csrf_exempt decorator to the controller; in this case, Django refuse to process your request
+*   500: This is probably the most common one, which means some code in the controller crashed, or threw an exception
+
+Normally you can see the error message in the terminal you're running the server, like this:
+
+{% highlight bash %}
+Internal Server Error: /practise/heartbeat
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 130, in get_response
+    % (callback.__module__, view_name))
+ValueError: The view app.controllers.practise.heart_beat didn't return an HttpResponse object. It returned None instead.
+[09/Feb/2015 17:44:15] "GET /practise/heartbeat HTTP/1.1" 500 55293
+{% endhighlight %}
+
+The error message would be very helpful for debugging. If you're using PyCharm, you'll see similar error messages in the console window.
+
+
+
 ### Summary
 
 After the study of this chapter, you should
