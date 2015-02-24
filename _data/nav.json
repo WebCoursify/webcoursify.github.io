@@ -1,0 +1,26 @@
+[
+	{
+		"url": "/about",
+  		"name": "ReadMe"
+  	},
+	{
+		"url": "http://webdemo.zhangty.me/",
+  		"name": "Project Demo"
+	},
+	{
+		"url": "/project_code",
+  		"name": "Download Project"
+  	},
+	{
+		"url": "http://eepurl.com/_YOyb",
+  		"name": "Subscribe update"
+  	},
+  	{
+		"url": "https://groups.google.com/forum/#!forum/webcoursify",
+		"name": "Discuss Forum"
+	},
+	{
+		"url": "http://zhangty.me",
+  		"name": "Contact"
+	}
+]
