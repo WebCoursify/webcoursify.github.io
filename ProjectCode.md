@@ -8,9 +8,9 @@ modified: 01-23-2015
 comments: true
 ---
 
-Click [here](/files/project-01-12-2015.tar) to download the newest source code.
+You can access the code via [github](https://github.com/WebCoursify/src-code-for-full-stack-web-platform) now! 
 
-Or, you can access the code via [github](https://github.com/WebCoursify/src-code-for-full-stack-web-platform) now! The code in **final** branch is the finished version!  
+The code in **final** branch is the finished version! Feel free to dig into it and figure out how does the reference code solve the requirements. I won't say my solution is the best, so I welcome anyone to make a better proposal. 
 
 You'll need to start from this demo project and follow the instructions on course content. By doing so you'll eventually finish this platform. Good luck!
 

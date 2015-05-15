@@ -38,6 +38,11 @@
                 "url": "/content/2-MVC-Controller/2-Assignment.html", 
                 "name": "Assignment for Implementing Controller", 
                 "title": "Assignment for Implementing Controller"
+            }, 
+            {
+                "url": "/content/2-MVC-Controller/3-AssignmentSolution.html", 
+                "name": "Controller Assignment Solution", 
+                "title": "Controller Assignment Solution"
             }
         ], 
         "name": "Intro to Django's Controller", 
