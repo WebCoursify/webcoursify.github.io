@@ -119,6 +119,11 @@
                 "url": "/content/99-ExtraMaterials/2-Deployment.html", 
                 "name": "Deployment", 
                 "title": "Deployment"
+            }, 
+            {
+                "url": "/content/99-ExtraMaterials/3-DatabaseRelatedTutorial.html", 
+                "name": "Database related tutorials", 
+                "title": "Database related tutorials"
             }
         ], 
         "name": "Extra Tutorials", 
