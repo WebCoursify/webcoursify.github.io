@@ -13,7 +13,7 @@ All test scripts can be found on the <code>test/</code> directory. First make su
     
     make install 
 
-to install dependencies. Then type
+to install dependencies. If you haven't done so, type <code>make load</code> to load some test data into the database for testing. Then type
     
     make 1_basic
 

@@ -38,7 +38,7 @@ You're expected to run the demo project successful before we actually start to g
             }
         }
 
-    Change the user name and password to yours. When you're done, type <code>python manage.py syncdb</code> to create all the tables
+    Change the user name and password to yours. When you're done, type <code>python manage.py migrate --run-syncdb </code> to create all the tables
 
 6.  Now we load some test data into the database. Check that under <code>data/</code> there's a file <code>parse.py</code> and a directory named "rawdata", which contains a lot of text files (the *Reuters-21578* dataset). 
 

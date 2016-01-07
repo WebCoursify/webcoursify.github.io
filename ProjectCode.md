@@ -15,6 +15,7 @@ The code in **final** branch is the finished version! Feel free to dig into it a
 You'll need to start from this demo project and follow the instructions on course content. By doing so you'll eventually finish this platform. Good luck!
 
 **Update logs**:
+01-07-2015: Upgrade to newer Django
 
 03-15-2015: Publish the finished Code to Github
 
