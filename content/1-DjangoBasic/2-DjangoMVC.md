@@ -137,7 +137,7 @@ There're several key components here:
         python manage.py runserver 
         
         # Synchronize database, create tables for all models in all applications
-        python manage.py syncdb    
+        python manage.py migrate --run-syncdb 
 
 
 
