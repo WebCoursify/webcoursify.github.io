@@ -8,13 +8,14 @@ modified: 01-23-2015
 comments: true
 ---
 
-You can access the code via [github](https://github.com/WebCoursify/src-code-for-full-stack-web-platform) now! 
-
-The code in **final** branch is the finished version! Feel free to dig into it and figure out how does the reference code solve the requirements. I won't say my solution is the best, so I welcome anyone to make a better proposal. 
+You can access the code via [github](https://github.com/WebCoursify/src-code-for-full-stack-web-platform) now! For starter code, please visit [Starter Code](https://github.com/WebCoursify/src-code-for-full-stack-web-platform/tree/publish-branch).
 
 You'll need to start from this demo project and follow the instructions on course content. By doing so you'll eventually finish this platform. Good luck!
 
+The code in **final** branch is the finished version! Perhaps you don't want to spoil the excitement of finishing the project by looking at that too early. But if you get stucked, Feel free to dig into it and figure out how the reference code solves the requirements. I won't say my solution is the best, so I welcome anyone to make a better proposal. 
+
 **Update logs**:
+
 01-07-2015: Upgrade to newer Django
 
 03-15-2015: Publish the finished Code to Github
